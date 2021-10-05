@@ -9,12 +9,20 @@
   "categories": [
     "Programming Languages"
   ],
+  "scripts": {
+    "test": "vscode-tmgrammar-test --scope source.vrl --grammar ./syntaxes/vrl.tmLanguage.json --testcases \"test/**/*.vrl\""
+  },
   "contributes": {
     "languages": [
       {
         "id": "vrl",
-        "aliases": ["Vector Remap Language", "vrl"],
-        "extensions": [".vrl"],
+        "aliases": [
+          "Vector Remap Language",
+          "vrl"
+        ],
+        "extensions": [
+          ".vrl"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -25,5 +33,8 @@
         "path": "./syntaxes/vrl.tmLanguage.json"
       }
     ]
+  },
+  "devDependencies": {
+    "vscode-tmgrammar-test": "^0.0.11"
   }
 }
