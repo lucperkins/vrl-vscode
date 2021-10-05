@@ -1,0 +1,17 @@
+# SYNTAX TEST "source.vrl" "strings"
+
+b1 = true
+#    ^^^^ constant.language.boolean.vrl
+
+b2 = false
+     ^^^^^ constant.language.boolean.vrl
+
+b3 =          true
+#             ^^^^ constant.language.boolean.vrl
+
+# Not Booleans
+b4 = "true"
+#     ^^^^ string.vrl
+
+b5 = "false"
+#     ^^^^^ string.vrl

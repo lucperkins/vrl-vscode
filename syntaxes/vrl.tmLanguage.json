@@ -4,14 +4,23 @@
 	"scopeName": "source.vrl",
 	"patterns": [
 		{
-			"include": "#strings"
+			"include": "#values"
 		}
 	],
 	"repository": {
+		"booleans": {
+			"patterns": [
+				{
+					"comment": "Boolean value",
+					"name": "constant.language.boolean.vrl",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		},
 		"strings": {
 			"patterns": [
 				{
-					"comment": "Single-quoted string",
+					"comment": "Single-quoted string value",
 					"name": "string.quoted.single.vrl",
 					"begin": "'",
 					"beginCaptures": {
@@ -32,7 +41,7 @@
 					]
 				},
 				{
-					"comment": "Double-quoted string",
+					"comment": "Double-quoted string value",
 					"name": "string.quoted.double.vrl",
 					"begin": "\"",
 					"beginCaptures": {
@@ -53,7 +62,7 @@
 					]
 				},
 				{
-					"comment": "Single-quoted string literal",
+					"comment": "Single-quoted string literal value",
 					"name": "string.quoted.double.vrl",
 					"begin": "s'",
 					"beginCaptures": {
@@ -74,51 +83,9 @@
 					]
 				},
 				{
-					"comment": "Double-quoted string literal",
+					"comment": "Double-quoted string literal value",
 					"name": "string.quoted.double.vrl",
 					"begin": "s\"",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.begin.vrl"
-						}
-					},
-					"end": "\"",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.end.vrl"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#string-content"
-						}
-					]
-				},
-				{
-					"comment": "Single-quoted timestamp",
-					"name": "string.quoted.double.vrl",
-					"begin": "t'",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.begin.vrl"
-						}
-					},
-					"end": "'",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.end.vrl"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#string-content"
-						}
-					]
-				},
-				{
-					"comment": "Double-quoted timestamp",
-					"name": "string.quoted.double.vrl",
-					"begin": "t\"",
 					"beginCaptures": {
 						"0": {
 							"name": "punctuation.definition.string.begin.vrl"
@@ -143,6 +110,65 @@
 				{
 					"match": "(\\w+)",
 					"name": "string.vrl"
+				}
+			]
+		},
+		"timestamps": {
+			"patterns": [
+				{
+					"comment": "Single-quoted timestamp value",
+					"name": "string.quoted.double.vrl",
+					"begin": "t'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
+				},
+				{
+					"comment": "Double-quoted timestamp value",
+					"name": "string.quoted.double.vrl",
+					"begin": "t\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
+				}
+			]
+		},
+		"values": {
+			"patterns": [
+				{
+					"include": "#booleans"
+				},
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#timestamps"
 				}
 			]
 		}
