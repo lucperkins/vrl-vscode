@@ -48,6 +48,15 @@
 				}
 			]
 		},
+		"null": {
+			"patterns": [
+				{
+					"comment": "Null value",
+					"name": "constant.language.null.vrl",
+					"match": "\\b(null)\\b"
+				}
+			]
+		},
 		"object": {
 			"comment": "Object value",
 			"name": "meta.structure.dictionary.vrl",
@@ -271,6 +280,9 @@
 				},
 				{
 					"include": "#boolean"
+				},
+				{
+					"include": "#null"
 				},
 				{
 					"include": "#object"

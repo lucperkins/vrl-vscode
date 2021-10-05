@@ -1,0 +1,16 @@
+# SYNTAX TEST "source.vrl" "null"
+
+n1 = null
+#    ^^^^ constant.language.null.vrl
+
+# Not null
+n2 = "null"
+#     ^^^^ string.vrl
+
+# In object
+o1 = { "null":   null }
+#                ^^^^ constant.language.null.vrl
+
+# In array
+a1 = [1, 2, 3, {}, true, null]
+#                        ^^^^ constant.language.null.vrl

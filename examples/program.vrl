@@ -12,3 +12,5 @@ obj = {
     "string": s"here is a nested string"
   }
 }
+
+fruits = ["apple", "orange", "banana", [1, 2, 3], null]
