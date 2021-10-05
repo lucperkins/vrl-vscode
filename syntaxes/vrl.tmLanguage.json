@@ -4,6 +4,9 @@
 	"scopeName": "source.vrl",
 	"patterns": [
 		{
+			"include": "#comment"
+		},
+		{
 			"include": "#value"
 		}
 	],
@@ -36,6 +39,10 @@
 					"comment": "Illegal separator",
 					"name": "invalid.illegal.array-separator.vrl",
 					"match": "[^\\s\\]]"
+				},
+				{
+					"comment": "Comment",
+					"include": "#comment"
 				}
 			]
 		},
@@ -44,15 +51,15 @@
 			"name": "constant.language.boolean.vrl",
 			"match": "\\b(true|false)\\b"
 		},
+		"comment": {
+			"comment": "Comment",
+			"name": "comment",
+			"match": "(\\s+)?#(.*)$"
+		},
 		"null": {
 			"comment": "Null value",
 			"name": "constant.language.null.vrl",
 			"match": "\\b(null)\\b"
-		},
-		"plain-integer-or-float": {
-			"comment": "Plain integer or float value",
-			"name": "constant.numeric.vrl",
-			"match": "[+-]?([0-9]*[.])?[0-9]+"
 		},
 		"number": {
 			"patterns": [
@@ -88,6 +95,10 @@
 				{
 					"match": "[^\\s\\}]",
 					"name": "invalid.illegal.expected-dictionary-separator.vrl"
+				},
+				{
+					"comment": "Comment",
+					"include": "#comment"
 				}
 			]
 		},
@@ -134,6 +145,11 @@
 					"name": "invalid.illegal.expected-dictionary-separator.vrl"
 				}
 			]
+		},
+		"plain-integer-or-float": {
+			"comment": "Plain integer or float value",
+			"name": "constant.numeric.vrl",
+			"match": "[+-]?([0-9]*[.])?[0-9]+"
 		},
 		"regex": {
 			"patterns": [
