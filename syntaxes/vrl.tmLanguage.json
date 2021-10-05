@@ -1,0 +1,7 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Vector Remap Language",
+	"scopeName": "source.vrl",
+	"patterns": [],
+	"repository": {}
+}

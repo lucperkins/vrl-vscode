@@ -1,0 +1,29 @@
+{
+  "name": "vrl-vscode",
+  "displayName": "Vector Remap Language",
+  "description": "Vector Remap Language (VRL) support for VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "vrl",
+        "aliases": ["Vector Remap Language", "vrl"],
+        "extensions": [".vrl"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "vrl",
+        "scopeName": "source.vrl",
+        "path": "./syntaxes/vrl.tmLanguage.json"
+      }
+    ]
+  }
+}
