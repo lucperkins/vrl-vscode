@@ -40,20 +40,24 @@
 			]
 		},
 		"boolean": {
-			"patterns": [
-				{
-					"comment": "Boolean value",
-					"name": "constant.language.boolean.vrl",
-					"match": "\\b(true|false)\\b"
-				}
-			]
+			"comment": "Boolean value",
+			"name": "constant.language.boolean.vrl",
+			"match": "\\b(true|false)\\b"
 		},
 		"null": {
+			"comment": "Null value",
+			"name": "constant.language.null.vrl",
+			"match": "\\b(null)\\b"
+		},
+		"plain-integer-or-float": {
+			"comment": "Plain integer or float value",
+			"name": "constant.numeric.vrl",
+			"match": "[+-]?([0-9]*[.])?[0-9]+"
+		},
+		"number": {
 			"patterns": [
 				{
-					"comment": "Null value",
-					"name": "constant.language.null.vrl",
-					"match": "\\b(null)\\b"
+					"include": "#plain-integer-or-float"
 				}
 			]
 		},
@@ -283,6 +287,9 @@
 				},
 				{
 					"include": "#null"
+				},
+				{
+					"include": "#number"
 				},
 				{
 					"include": "#object"

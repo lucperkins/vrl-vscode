@@ -13,4 +13,4 @@ obj = {
   }
 }
 
-fruits = ["apple", "orange", "banana", [1, 2, 3], null]
+fruits = ["apple", "orange", "banana", [1, 2, 3], null, 37.5]

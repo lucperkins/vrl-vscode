@@ -1,0 +1,4 @@
+# SYNTAX TEST "source.vrl" "number"
+
+f1 = 12.5
+#    ^^^^ constant.numeric.vrl

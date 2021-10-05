@@ -1,4 +1,4 @@
-# SYNTAX TEST "source.vrl" "strings"
+# SYNTAX TEST "source.vrl" "array"
 
 a1 = [1, 2, 3]
 #    ^ punctuation.definition.array.begin.vrl
