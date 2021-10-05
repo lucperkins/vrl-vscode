@@ -8,6 +8,37 @@
 		}
 	],
 	"repository": {
+		"array": {
+			"comment": "Array value",
+			"name": "meta.structure.array.vrl",
+			"begin": "\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.array.begin.vrl"
+				}
+			},
+			"end": "\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.array.end.vrl"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#value"
+				},
+				{
+					"comment": "Comma",
+					"name": "punctuation.definition.separator.array.vrl",
+					"match": ","
+				},
+				{
+					"comment": "Illegal separator",
+					"name": "invalid.illegal.array-separator.vrl",
+					"match": "[^\\s\\]]"
+				}
+			]
+		},
 		"boolean": {
 			"patterns": [
 				{
@@ -20,13 +51,13 @@
 		"object": {
 			"comment": "Object value",
 			"name": "meta.structure.dictionary.vrl",
-			"begin": "{",
+			"begin": "\\{",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.definition.dictionary.begin.vrl"
 				}
 			},
-			"end": "}",
+			"end": "\\}",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.definition.dictionary.end.vrl"
@@ -235,6 +266,9 @@
 		},
 		"value": {
 			"patterns": [
+				{
+					"include": "#array"
+				},
 				{
 					"include": "#boolean"
 				},

@@ -1,0 +1,16 @@
+# SYNTAX TEST "source.vrl" "strings"
+
+a1 = [1, 2, 3]
+#    ^ punctuation.definition.array.begin.vrl
+#      ^ punctuation.definition.separator.array.vrl
+#         ^ punctuation.definition.separator.array.vrl
+#            & punctuation.definition.array.end.vrl
+
+# Nested arrays
+a2 = ["foo", true, [1, 2, 3]   ]
+#    ^ punctuation.definition.array.begin.vrl
+#                  ^ punctuation.definition.array.begin.vrl
+#                    ^ punctuation.definition.separator.array.vrl
+#                       ^ punctuation.definition.separator.array.vrl
+#                          ^ punctuation.definition.array.end.vrl
+#                              ^ punctuation.definition.array.end.vrl
