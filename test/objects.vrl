@@ -1,0 +1,33 @@
+# SYNTAX TEST "source.vrl" "objects"
+
+# Simple object
+o1 = { "foo": "bar" }
+#    ^ punctuation.definition.dictionary.begin.vrl
+#                   ^ punctuation.definition.dictionary.end.vrl
+#      ^ punctuation.support.type.property-name.begin.vrl
+#          ^ punctuation.support.type.property-name.end.vrl
+#       ^^^ string.vrl
+#           ^ punctuation.separator.dictionary.key-value.vrl
+#             ^ punctuation.definition.string.begin.vrl
+#                 ^ punctuation.definition.string.end.vrl
+#              ^^^ string.vrl
+#                   ^ punctuation.definition.dictionary.end.vrl
+
+# Multi-line object
+o2 = {"value"   :
+#    ^ punctuation.definition.dictionary.begin.vrl
+#     ^ punctuation.support.type.property-name.begin.vrl
+#      ^^^^^ string.vrl
+#           ^ punctuation.support.type.property-name.end.vrl
+#               ^ punctuation.separator.dictionary.key-value.vrl
+
+        true}
+#       ^^^^ constant.language.boolean.vrl
+#           ^ punctuation.definition.dictionary.end.vrl
+
+# Nested object
+o3 = {"boolean": {"value": true}}
+#    ^ punctuation.definition.dictionary.begin.vrl
+#                ^ punctuation.definition.dictionary.begin.vrl
+#                              ^ punctuation.definition.dictionary.end.vrl
+#                               ^ punctuation.definition.dictionary.end.vrl

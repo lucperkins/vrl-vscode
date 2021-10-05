@@ -3,3 +3,12 @@
 "Hello world"
 
 s'Hello'
+
+obj = {
+  "boolean": true,
+  "string": s'Here is a string',
+  "object": {
+    "boolean": true,
+    "string": s"here is a nested string"
+  }
+}

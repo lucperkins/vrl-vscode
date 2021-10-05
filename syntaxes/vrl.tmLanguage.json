@@ -4,11 +4,11 @@
 	"scopeName": "source.vrl",
 	"patterns": [
 		{
-			"include": "#values"
+			"include": "#value"
 		}
 	],
 	"repository": {
-		"booleans": {
+		"boolean": {
 			"patterns": [
 				{
 					"comment": "Boolean value",
@@ -17,7 +17,81 @@
 				}
 			]
 		},
-		"strings": {
+		"object": {
+			"comment": "Object value",
+			"name": "meta.structure.dictionary.vrl",
+			"begin": "{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.dictionary.begin.vrl"
+				}
+			},
+			"end": "}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.dictionary.end.vrl"
+				}
+			},
+			"patterns": [
+				{
+					"comment": "Object key",
+					"include": "#object-key"
+				},
+				{
+					"comment": "Object value",
+					"include": "#object-value"
+				},
+				{
+					"match": "[^\\s\\}]",
+					"name": "invalid.illegal.expected-dictionary-separator.vrl"
+				}
+			]
+		},
+		"object-key": {
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.support.type.property-name.begin.vrl"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.support.type.property-name.end.vrl"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#string-content"
+				}
+			]
+		},
+		"object-value": {
+			"name": "meta.structure.dictionary.value.vrl",
+			"begin": ":",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.separator.dictionary.key-value.vrl"
+				}
+			},
+			"end": "(,)|(?=\\})",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.separator.dictionary.pair.vrl"
+				}
+			},
+			"patterns": [
+				{
+					"comment": "The value",
+					"include": "#value"
+				},
+				{
+					"match": "[^\\s,]",
+					"name": "invalid.illegal.expected-dictionary-separator.vrl"
+				}
+			]
+		},
+		"string": {
 			"patterns": [
 				{
 					"comment": "Single-quoted string value",
@@ -113,7 +187,7 @@
 				}
 			]
 		},
-		"timestamps": {
+		"timestamp": {
 			"patterns": [
 				{
 					"comment": "Single-quoted timestamp value",
@@ -159,16 +233,19 @@
 				}
 			]
 		},
-		"values": {
+		"value": {
 			"patterns": [
 				{
-					"include": "#booleans"
+					"include": "#boolean"
 				},
 				{
-					"include": "#strings"
+					"include": "#object"
 				},
 				{
-					"include": "#timestamps"
+					"include": "#string"
+				},
+				{
+					"include": "#timestamp"
 				}
 			]
 		}
