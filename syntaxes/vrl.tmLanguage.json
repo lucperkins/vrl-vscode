@@ -93,6 +93,48 @@
 							"include": "#string-content"
 						}
 					]
+				},
+				{
+					"comment": "Single-quoted timestamp",
+					"name": "string.quoted.double.vrl",
+					"begin": "t'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
+				},
+				{
+					"comment": "Double-quoted timestamp",
+					"name": "string.quoted.double.vrl",
+					"begin": "t\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
 				}
 			]
 		},

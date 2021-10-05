@@ -42,3 +42,13 @@ s5 = s'string'
 s6 = s"string"
 #    ^^ punctuation.definition.string.begin.vrl
 #            ^ punctuation.definition.string.end.vrl
+
+# Single-quoted timestamp
+t1 = t'2021-10-05T21:37:44.418371Z'
+#    ^^ punctuation.definition.string.begin.vrl
+#                                 ^ punctuation.definition.string.end.vrl
+
+# Double-quoted timestamp
+t1 = t"2021-10-05T21:37:44.418371Z"
+#    ^^ punctuation.definition.string.begin.vrl
+#                                 ^ punctuation.definition.string.end.vrl
