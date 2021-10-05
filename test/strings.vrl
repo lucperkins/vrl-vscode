@@ -5,7 +5,7 @@
 # Single line
 s1 = 'string123'
 #    ^^^^^^^^^^^ string.quoted.single.vrl
-#     ^^^^^^^^^ constant.character.escape.vrl
+#     ^^^^^^^^^ string.vrl
 
 # Multiple lines
 s2 = 'start

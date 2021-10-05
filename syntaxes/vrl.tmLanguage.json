@@ -99,8 +99,8 @@
 		"string-content": {
 			"patterns": [
 				{
-					"match": "(\\w)",
-					"name": "constant.character.escape.vrl"
+					"match": "(\\w+)",
+					"name": "string.vrl"
 				}
 			]
 		}
