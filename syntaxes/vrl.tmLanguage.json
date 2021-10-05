@@ -2,6 +2,107 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Vector Remap Language",
 	"scopeName": "source.vrl",
-	"patterns": [],
-	"repository": {}
+	"patterns": [
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"strings": {
+			"patterns": [
+				{
+					"comment": "Single-quoted string",
+					"name": "string.quoted.single.vrl",
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
+				},
+				{
+					"comment": "Double-quoted string",
+					"name": "string.quoted.double.vrl",
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
+				},
+				{
+					"comment": "Single-quoted string literal",
+					"name": "string.quoted.double.vrl",
+					"begin": "s'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
+				},
+				{
+					"comment": "Double-quoted string literal",
+					"name": "string.quoted.double.vrl",
+					"begin": "s\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.vrl"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.vrl"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#string-content"
+						}
+					]
+				}
+			]
+		},
+		"string-content": {
+			"patterns": [
+				{
+					"match": "(\\w)",
+					"name": "constant.character.escape.vrl"
+				}
+			]
+		}
+	}
 }

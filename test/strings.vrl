@@ -1,0 +1,44 @@
+# SYNTAX TEST "source.vrl" "strings"
+
+# Single-quoted strings
+
+# Single line
+s1 = 'string123'
+#    ^^^^^^^^^^^ string.quoted.single.vrl
+#     ^^^^^^^^^ constant.character.escape.vrl
+
+# Multiple lines
+s2 = 'start
+#    ^ punctuation.definition.string.begin.vrl
+#    ^^^^^^ string.quoted.single.vrl
+  end'
+#    ^ punctuation.definition.string.end.vrl
+# ^^^^ string.quoted.single.vrl
+
+# Double-quoted strings
+
+# Single line
+s3 = "string"
+#    ^ punctuation.definition.string.begin.vrl
+#           ^ punctuation.definition.string.end.vrl
+#     ^^^^^^^^ string.quoted.double.vrl
+
+# Multiple lines
+s4 = "begin
+#    ^ punctuation.definition.string.begin.vrl
+#    ^^^^^^ string.quoted.double.vrl
+      end"
+#        ^ punctuation.definition.string.end.vrl
+#     ^^^^ string.quoted.double.vrl
+
+# Single-quoted literal
+
+s5 = s'string'
+#    ^^ punctuation.definition.string.begin.vrl
+#            ^ punctuation.definition.string.end.vrl
+
+# Double-quoted literal
+
+s6 = s"string"
+#    ^^ punctuation.definition.string.begin.vrl
+#            ^ punctuation.definition.string.end.vrl
