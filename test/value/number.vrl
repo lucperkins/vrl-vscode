@@ -1,4 +1,22 @@
 # SYNTAX TEST "source.vrl" "number"
 
+i1 = 127
+#    ^^^ constant.numeric.vrl
+
 f1 = 12.5
 #    ^^^^ constant.numeric.vrl
+
+# In arrays
+a1 = [1, true, {}, 37.5]
+#     ^ constant.numeric.vrl
+#                  ^^^^ constant.numeric.vrl
+
+# In objects
+o1 = { "nested": { "values": {"inner":  {"numbers": [0, 1, -10]}} } }
+#                                                    ^ constant.numeric.vrl
+#                                                       ^ constant.numeric.vrl
+#                                                          ^^^ constant.numeric.vrl
+
+# Not integers
+s1 = "127"
+#     ^^^ string.vrl

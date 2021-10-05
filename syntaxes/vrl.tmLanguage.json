@@ -135,6 +135,42 @@
 				}
 			]
 		},
+		"regex": {
+			"patterns": [
+				{
+					"comment": "Single-quoted regex value",
+					"name": "string.regexp.vrl",
+					"begin": "r'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.regexp.begin.vrl"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.regexp.end.vrl"
+						}
+					}
+				},
+				{
+					"comment": "Double-quoted regex value",
+					"name": "string.regexp.vrl",
+					"begin": "r\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.regexp.begin.vrl"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.regexp.end.vrl"
+						}
+					}
+				}
+			]
+		},
 		"string": {
 			"patterns": [
 				{
@@ -293,6 +329,9 @@
 				},
 				{
 					"include": "#object"
+				},
+				{
+					"include": "#regex"
 				},
 				{
 					"include": "#string"
