@@ -4,13 +4,28 @@
 	"scopeName": "source.vrl",
 	"patterns": [
 		{
+			"include": "#bare-punctuation"
+		},
+		{
 			"include": "#comment"
+		},
+		{
+			"include": "#control"
 		},
 		{
 			"include": "#function"
 		},
 		{
+			"include": "#path"
+		},
+		{
+			"include": "#reserved"
+		},
+		{
 			"include": "#value"
+		},
+		{
+			"include": "#variable"
 		}
 	],
 	"repository": {
@@ -34,9 +49,7 @@
 					"include": "#value"
 				},
 				{
-					"comment": "Comma",
-					"name": "punctuation.definition.separator.array.vrl",
-					"match": ","
+					"include": "#comma"
 				},
 				{
 					"comment": "Illegal separator",
@@ -46,6 +59,17 @@
 				{
 					"comment": "Comment",
 					"include": "#comment"
+				},
+				{
+					"comment": "Variable",
+					"include": "#variable"
+				}
+			]
+		},
+		"bare-punctuation": {
+			"patterns": [
+				{
+					"include": "#comma"
 				}
 			]
 		},
@@ -54,17 +78,27 @@
 			"name": "constant.language.boolean.vrl",
 			"match": "\\b(true|false)\\b"
 		},
+		"comma": {
+			"comment": "Comma",
+			"name": "punctuation.definition.separator.vrl",
+			"match": ","
+		},
 		"comment": {
 			"comment": "Comment",
-			"name": "comment",
+			"name": "comment.vrl",
 			"match": "(\\s+)?#(.*)$"
+		},
+		"control": {
+			"comment": "Flow control",
+			"name": "keyword.control.vrl",
+			"match": "\\b(if|else)\\b"
 		},
 		"function": {
 			"patterns": [
 				{
 					"comment": "Function",
 					"name": "entity.name.function",
-					"match": "(?<![.])\\b(append|decode_base64|decode_percent|encode_base64|encode_json|encode_key_value|encode_logfmt|now|push|etc)\\b"
+					"match": "(?<![.])\\b(append|decode_base64|decode_percent|encode_base64|encode_json|encode_key_value|encode_logfmt|log|now|parse_json|push|etc)\\b"
 				},
 				{
 					"comment": "Type function",
@@ -158,10 +192,19 @@
 					"include": "#value"
 				},
 				{
+					"comment": "Variable",
+					"include": "#variable"
+				},
+				{
 					"match": "[^\\s,]",
 					"name": "invalid.illegal.expected-dictionary-separator.vrl"
 				}
 			]
+		},
+		"path": {
+			"comment": "Event path",
+			"name": "variable.language.path.vrl",
+			"match": "\\.(\\w+)"
 		},
 		"plain-integer-or-float": {
 			"comment": "Plain integer or float value",
@@ -203,6 +246,11 @@
 					}
 				}
 			]
+		},
+		"reserved": {
+			"comment": "Forbidden reserved terms",
+			"name": "invalid.illegal.reserved.vrl",
+			"match": "(abort|as|break|continue|for|impl|in|let|loop|return|self|std|then|this|type|until|use|while)"
 		},
 		"string": {
 			"patterns": [
@@ -373,6 +421,11 @@
 					"include": "#timestamp"
 				}
 			]
+		},
+		"variable": {
+			"comment": "Variable",
+			"name": "variable.vrl",
+			"match": "(?<![.])(\\w+)"
 		}
 	}
 }

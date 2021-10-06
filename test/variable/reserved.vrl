@@ -1,0 +1,4 @@
+# SYNTAX TEST "source.vrl" "reserved"
+
+my_var = while true {}
+#        ^^^^^ invalid.illegal.reserved.vrl
