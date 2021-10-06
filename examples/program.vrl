@@ -1,13 +1,3 @@
-structured =
-  parse_syslog(.message) ??
-  parse_common_log(.message) ??
-  parse_regex!(.message, r'^(?P<timestamp>\d+/\d+/\d+ \d+:\d+:\d+) \[(?P<severity>\w+)\] (?P<pid>\d+)#(?P<tid>\d+):(?: \*(?P<connid>\d+))? (?P<message>.*)$')
-. = merge(., structured)
-
-.tags.environment = get_env_var!("ENV") # add
-.tags.hostname = del(.tags.host) # rename
-del(.tags.email)
-
 . |= parse_regex!(.message, r'^(?P<timestamp>\d+/\d+/\d+ \d+:\d+:\d+ \+\d+) \[(?P<severity>\w+)\] (?P<pid>\d+)#(?P<tid>\d+):(?: \*(?P<connid>\d+))? (?P<message>.*)$')
 
 # Coerce parsed fields

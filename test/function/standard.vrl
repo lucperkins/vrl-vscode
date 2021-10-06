@@ -1,4 +1,0 @@
-# SYNTAX TEST "source.vrl" "standard function"
-
-.timestamp = now()
-#            ^^^ entity.name.function

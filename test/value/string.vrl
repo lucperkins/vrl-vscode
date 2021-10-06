@@ -11,9 +11,11 @@ s1 = 'string123'
 s2 = 'start
 #    ^ punctuation.definition.string.begin.vrl
 #    ^^^^^^ string.quoted.single.vrl
+#     ^^^^^ string.vrl
   end'
 #    ^ punctuation.definition.string.end.vrl
 # ^^^^ string.quoted.single.vrl
+# ^^^ string.vrl
 
 # Double-quoted strings
 

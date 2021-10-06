@@ -1,8 +1,0 @@
-# SYNTAX TEST "source.vrl" "variable"
-
-  json, err = parse_json!(.message)
-# ^^^^ variable.vrl
-#     ^ punctuation.definition.separator.vrl
-#       ^^^ variable.vrl
-#             ^^^^^^^^^^ entity.name.function
-#                         ^^^^^^^^ variable.language.path.vrl
