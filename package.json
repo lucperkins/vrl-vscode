@@ -2,8 +2,8 @@
   "name": "vrl-vscode",
   "displayName": "Vector Remap Language",
   "description": "Vector Remap Language (VRL) support for VS Code",
-  "license": "MIT",
-  "version": "0.0.1",
+  "license": "MPL-2.0",
+  "version": "0.1.0-SNAPSHOT",
   "engines": {
     "vscode": "^1.60.0"
   },
