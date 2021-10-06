@@ -1,53 +1,22 @@
-# Comment
+structured =
+  parse_syslog(.message) ??
+  parse_common_log(.message) ??
+  parse_regex!(.message, r'^(?P<timestamp>\d+/\d+/\d+ \d+:\d+:\d+) \[(?P<severity>\w+)\] (?P<pid>\d+)#(?P<tid>\d+):(?: \*(?P<connid>\d+))? (?P<message>.*)$')
+. = merge(., structured)
 
-"Hello world"
+.tags.environment = get_env_var!("ENV") # add
+.tags.hostname = del(.tags.host) # rename
+del(.tags.email)
 
-s'Hello'
+. |= parse_regex!(.message, r'^(?P<timestamp>\d+/\d+/\d+ \d+:\d+:\d+ \+\d+) \[(?P<severity>\w+)\] (?P<pid>\d+)#(?P<tid>\d+):(?: \*(?P<connid>\d+))? (?P<message>.*)$')
 
-obj = {
-  # Comment
-  "boolean": true, # Comment
-  "string": s'Here is a string',
-  "object": {
-    "boolean": true,
-    "string": s"here is a nested string"
-  }
-}
+# Coerce parsed fields
+.timestamp = parse_timestamp(.timestamp, "%Y/%m/%d %H:%M:%S %z") ?? now()
+.pid = to_int!(.pid)
+.tid = to_int!(.tid)
 
-items = ["apple", "orange", "banana", [1, 2, 3], null, 37.5]
-
-my_regex = r'[+-]?([0-9]*[.])?[0-9]+'
-my_other_regex = r"[+-]?([0-9]*[.])?[0-9]+"
-
-arr_1 = [
-  1,
-  # Comment
-  2,
-  3
-]
-
-# Type functions
-array(.array)
-is_array(.is_array)
-timestamp(.timestamp)
-is_timestamp(.timestamp)
-
-.timestamp = now(.message)
-
-.foo = "bar"
-
-obj = {
-  "foo": foo,
-}
-
-json, err = parse_json(.message)
-if err != null {
-
-} else {
-  "something else"
-}
-
-# Forbidden
-while true {
-
-}
+# Extract structured data
+message_parts = split(.message, ", ", limit: 2)
+structured = parse_key_value(message_parts[1], key_value_delimiter: ":", field_delimiter: ",") ?? {}
+.message = message_parts[0]
+. = merge(., structured)
