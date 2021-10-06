@@ -1,0 +1,557 @@
+{
+  "append": {
+    "prefix": ["append"],
+    "body": "append($0)",
+    "description": "The append function"
+  },
+  "array": {
+    "prefix": ["array"],
+    "body": "array($0)",
+    "description": "The array function"
+  },
+  "assert": {
+    "prefix": ["assert"],
+    "body": "assert($0)",
+    "description": "The assert function"
+  },
+  "assert_eq": {
+    "prefix": ["assert_eq"],
+    "body": "assert_eq($0)",
+    "description": "The assert_eq function"
+  },
+  "bool": {
+    "prefix": ["bool"],
+    "body": "bool($0)",
+    "description": "The bool function"
+  },
+  "ceil": {
+    "prefix": ["ceil"],
+    "body": "ceil($0)",
+    "description": "The ceil function"
+  },
+  "compact": {
+    "prefix": ["compact"],
+    "body": "compact($0)",
+    "description": "The compact function"
+  },
+  "contains": {
+    "prefix": ["contains"],
+    "body": "contains($0)",
+    "description": "The contains function"
+  },
+  "decode_base64": {
+    "prefix": ["decode_base64"],
+    "body": "decode_base64($0)",
+    "description": "The decode_base64 function"
+  },
+  "decode_percent": {
+    "prefix": ["decode_percent"],
+    "body": "decode_percent($0)",
+    "description": "The decode_percent function"
+  },
+  "del": {
+    "prefix": ["del"],
+    "body": "del($0)",
+    "description": "The del function"
+  },
+  "downcase": {
+    "prefix": ["downcase"],
+    "body": "downcase($0)",
+    "description": "The downcase function"
+  },
+  "encode_base64": {
+    "prefix": ["encode_base64"],
+    "body": "encode_base64($0)",
+    "description": "The encode_base64 function"
+  },
+  "encode_json": {
+    "prefix": ["encode_json"],
+    "body": "encode_json($0)",
+    "description": "The encode_json function"
+  },
+  "encode_key_value": {
+    "prefix": ["encode_key_value"],
+    "body": "encode_key_value($0)",
+    "description": "The encode_key_value function"
+  },
+  "encode_logfmt": {
+    "prefix": ["encode_logfmt"],
+    "body": "encode_logfmt($0)",
+    "description": "The encode_logfmt function"
+  },
+  "encode_percent": {
+    "prefix": ["encode_percent"],
+    "body": "encode_percent($0)",
+    "description": "The encode_percent function"
+  },
+  "ends_with": {
+    "prefix": ["ends_with"],
+    "body": "ends_with($0)",
+    "description": "The ends_with function"
+  },
+  "exists": {
+    "prefix": ["exists"],
+    "body": "exists($0)",
+    "description": "The exists function"
+  },
+  "flatten": {
+    "prefix": ["flatten"],
+    "body": "flatten($0)",
+    "description": "The flatten function"
+  },
+  "float": {
+    "prefix": ["float"],
+    "body": "float($0)",
+    "description": "The float function"
+  },
+  "floor": {
+    "prefix": ["floor"],
+    "body": "floor($0)",
+    "description": "The floor function"
+  },
+  "format_int": {
+    "prefix": ["format_int"],
+    "body": "format_int($0)",
+    "description": "The format_int function"
+  },
+  "format_number": {
+    "prefix": ["format_number"],
+    "body": "format_number($0)",
+    "description": "The format_number function"
+  },
+  "format_timestamp": {
+    "prefix": ["format_timestamp"],
+    "body": "format_timestamp($0)",
+    "description": "The format_timestamp function"
+  },
+  "get_env_var": {
+    "prefix": ["get_env_var"],
+    "body": "get_env_var($0)",
+    "description": "The get_env_var function"
+  },
+  "get_hostname": {
+    "prefix": ["get_hostname"],
+    "body": "get_hostname($0)",
+    "description": "The get_hostname function"
+  },
+  "includes": {
+    "prefix": ["includes"],
+    "body": "includes($0)",
+    "description": "The includes function"
+  },
+  "int": {
+    "prefix": ["int"],
+    "body": "int($0)",
+    "description": "The int function"
+  },
+  "ip_aton": {
+    "prefix": ["ip_aton"],
+    "body": "ip_aton($0)",
+    "description": "The ip_aton function"
+  },
+  "ip_cidr_contains": {
+    "prefix": ["ip_cidr_contains"],
+    "body": "ip_cidr_contains($0)",
+    "description": "The ip_cidr_contains function"
+  },
+  "ip_ntoa": {
+    "prefix": ["ip_ntoa"],
+    "body": "ip_ntoa($0)",
+    "description": "The ip_ntoa function"
+  },
+  "ip_subnet": {
+    "prefix": ["ip_subnet"],
+    "body": "ip_subnet($0)",
+    "description": "The ip_subnet function"
+  },
+  "ip_to_ipv6": {
+    "prefix": ["ip_to_ipv6"],
+    "body": "ip_to_ipv6($0)",
+    "description": "The ip_to_ipv6 function"
+  },
+  "ipv6_to_ipv4": {
+    "prefix": ["ipv6_to_ipv4"],
+    "body": "ipv6_to_ipv4($0)",
+    "description": "The ipv6_to_ipv4 function"
+  },
+  "is_array": {
+    "prefix": ["is_array"],
+    "body": "is_array($0)",
+    "description": "The is_array function"
+  },
+  "is_boolean": {
+    "prefix": ["is_boolean"],
+    "body": "is_boolean($0)",
+    "description": "The is_boolean function"
+  },
+  "is_float": {
+    "prefix": ["is_float"],
+    "body": "is_float($0)",
+    "description": "The is_float function"
+  },
+  "is_integer": {
+    "prefix": ["is_integer"],
+    "body": "is_integer($0)",
+    "description": "The is_integer function"
+  },
+  "is_null": {
+    "prefix": ["is_null"],
+    "body": "is_null($0)",
+    "description": "The is_null function"
+  },
+  "is_nullish": {
+    "prefix": ["is_nullish"],
+    "body": "is_nullish($0)",
+    "description": "The is_nullish function"
+  },
+  "is_object": {
+    "prefix": ["is_object"],
+    "body": "is_object($0)",
+    "description": "The is_object function"
+  },
+  "is_regex": {
+    "prefix": ["is_regex"],
+    "body": "is_regex($0)",
+    "description": "The is_regex function"
+  },
+  "is_string": {
+    "prefix": ["is_string"],
+    "body": "is_string($0)",
+    "description": "The is_string function"
+  },
+  "is_timestamp": {
+    "prefix": ["is_timestamp"],
+    "body": "is_timestamp($0)",
+    "description": "The is_timestamp function"
+  },
+  "join": {
+    "prefix": ["join"],
+    "body": "join($0)",
+    "description": "The join function"
+  },
+  "length": {
+    "prefix": ["length"],
+    "body": "length($0)",
+    "description": "The length function"
+  },
+  "log": {
+    "prefix": ["log"],
+    "body": "log($0)",
+    "description": "The log function"
+  },
+  "match": {
+    "prefix": ["match"],
+    "body": "match($0)",
+    "description": "The match function"
+  },
+  "match_any": {
+    "prefix": ["match_any"],
+    "body": "match_any($0)",
+    "description": "The match_any function"
+  },
+  "match_array": {
+    "prefix": ["match_array"],
+    "body": "match_array($0)",
+    "description": "The match_array function"
+  },
+  "match_datadog_query": {
+    "prefix": ["match_datadog_query"],
+    "body": "match_datadog_query($0)",
+    "description": "The match_datadog_query function"
+  },
+  "md5": {
+    "prefix": ["md5"],
+    "body": "md5($0)",
+    "description": "The md5 function"
+  },
+  "merge": {
+    "prefix": ["merge"],
+    "body": "merge($0)",
+    "description": "The merge function"
+  },
+  "now": {
+    "prefix": ["now"],
+    "body": "now($0)",
+    "description": "The now function"
+  },
+  "object": {
+    "prefix": ["object"],
+    "body": "object($0)",
+    "description": "The object function"
+  },
+  "parse_apache_log": {
+    "prefix": ["parse_apache_log"],
+    "body": "parse_apache_log($0)",
+    "description": "The parse_apache_log function"
+  },
+  "parse_aws_alb_log": {
+    "prefix": ["parse_aws_alb_log"],
+    "body": "parse_aws_alb_log($0)",
+    "description": "The parse_aws_alb_log function"
+  },
+  "parse_aws_cloudwatch_log_subscription_message": {
+    "prefix": ["parse_aws_cloudwatch_log_subscription_message"],
+    "body": "parse_aws_cloudwatch_log_subscription_message($0)",
+    "description": "The parse_aws_cloudwatch_log_subscription_message function"
+  },
+  "parse_aws_vpc_flow_log": {
+    "prefix": ["parse_aws_vpc_flow_log"],
+    "body": "parse_aws_vpc_flow_log($0)",
+    "description": "The parse_aws_vpc_flow_log function"
+  },
+  "parse_common_log": {
+    "prefix": ["parse_common_log"],
+    "body": "parse_common_log($0)",
+    "description": "The parse_common_log function"
+  },
+  "parse_csv": {
+    "prefix": ["parse_csv"],
+    "body": "parse_csv($0)",
+    "description": "The parse_csv function"
+  },
+  "parse_duration": {
+    "prefix": ["parse_duration"],
+    "body": "parse_duration($0)",
+    "description": "The parse_duration function"
+  },
+  "parse_glog": {
+    "prefix": ["parse_glog"],
+    "body": "parse_glog($0)",
+    "description": "The parse_glog function"
+  },
+  "parse_grok": {
+    "prefix": ["parse_grok"],
+    "body": "parse_grok($0)",
+    "description": "The parse_grok function"
+  },
+  "parse_int": {
+    "prefix": ["parse_int"],
+    "body": "parse_int($0)",
+    "description": "The parse_int function"
+  },
+  "parse_json": {
+    "prefix": ["parse_json"],
+    "body": "parse_json($0)",
+    "description": "The parse_json function"
+  },
+  "parse_key_value": {
+    "prefix": ["parse_key_value"],
+    "body": "parse_key_value($0)",
+    "description": "The parse_key_value function"
+  },
+  "parse_klog": {
+    "prefix": ["parse_klog"],
+    "body": "parse_klog($0)",
+    "description": "The parse_klog function"
+  },
+  "parse_linux_authorization": {
+    "prefix": ["parse_linux_authorization"],
+    "body": "parse_linux_authorization($0)",
+    "description": "The parse_linux_authorization function"
+  },
+  "parse_logfmt": {
+    "prefix": ["parse_logfmt"],
+    "body": "parse_logfmt($0)",
+    "description": "The parse_logfmt function"
+  },
+  "parse_nginx_log": {
+    "prefix": ["parse_nginx_log"],
+    "body": "parse_nginx_log($0)",
+    "description": "The parse_nginx_log function"
+  },
+  "parse_query_string": {
+    "prefix": ["parse_query_string"],
+    "body": "parse_query_string($0)",
+    "description": "The parse_query_string function"
+  },
+  "parse_regex": {
+    "prefix": ["parse_regex"],
+    "body": "parse_regex($0)",
+    "description": "The parse_regex function"
+  },
+  "parse_regex_all": {
+    "prefix": ["parse_regex_all"],
+    "body": "parse_regex_all($0)",
+    "description": "The parse_regex_all function"
+  },
+  "parse_ruby_hash": {
+    "prefix": ["parse_ruby_hash"],
+    "body": "parse_ruby_hash($0)",
+    "description": "The parse_ruby_hash function"
+  },
+  "parse_syslog": {
+    "prefix": ["parse_syslog"],
+    "body": "parse_syslog($0)",
+    "description": "The parse_syslog function"
+  },
+  "parse_timestamp": {
+    "prefix": ["parse_timestamp"],
+    "body": "parse_timestamp($0)",
+    "description": "The parse_timestamp function"
+  },
+  "parse_tokens": {
+    "prefix": ["parse_tokens"],
+    "body": "parse_tokens($0)",
+    "description": "The parse_tokens function"
+  },
+  "parse_url": {
+    "prefix": ["parse_url"],
+    "body": "parse_url($0)",
+    "description": "The parse_url function"
+  },
+  "parse_user_agent": {
+    "prefix": ["parse_user_agent"],
+    "body": "parse_user_agent($0)",
+    "description": "The parse_user_agent function"
+  },
+  "parse_xml": {
+    "prefix": ["parse_xml"],
+    "body": "parse_xml($0)",
+    "description": "The parse_xml function"
+  },
+  "push": {
+    "prefix": ["push"],
+    "body": "push($0)",
+    "description": "The push function"
+  },
+  "redact": {
+    "prefix": ["redact"],
+    "body": "redact($0)",
+    "description": "The redact function"
+  },
+  "replace": {
+    "prefix": ["replace"],
+    "body": "replace($0)",
+    "description": "The replace function"
+  },
+  "round": {
+    "prefix": ["round"],
+    "body": "round($0)",
+    "description": "The round function"
+  },
+  "sha1": {
+    "prefix": ["sha1"],
+    "body": "sha1($0)",
+    "description": "The sha1 function"
+  },
+  "sha2": {
+    "prefix": ["sha2"],
+    "body": "sha2($0)",
+    "description": "The sha2 function"
+  },
+  "sha3": {
+    "prefix": ["sha3"],
+    "body": "sha3($0)",
+    "description": "The sha3 function"
+  },
+  "slice": {
+    "prefix": ["slice"],
+    "body": "slice($0)",
+    "description": "The slice function"
+  },
+  "split": {
+    "prefix": ["split"],
+    "body": "split($0)",
+    "description": "The split function"
+  },
+  "starts_with": {
+    "prefix": ["starts_with"],
+    "body": "starts_with($0)",
+    "description": "The starts_with function"
+  },
+  "string": {
+    "prefix": ["string"],
+    "body": "string($0)",
+    "description": "The string function"
+  },
+  "strip_ansi_escape_codes": {
+    "prefix": ["strip_ansi_escape_codes"],
+    "body": "strip_ansi_escape_codes($0)",
+    "description": "The strip_ansi_escape_codes function"
+  },
+  "strip_whitespace": {
+    "prefix": ["strip_whitespace"],
+    "body": "strip_whitespace($0)",
+    "description": "The strip_whitespace function"
+  },
+  "tag_types_externally": {
+    "prefix": ["tag_types_externally"],
+    "body": "tag_types_externally($0)",
+    "description": "The tag_types_externally function"
+  },
+  "timestamp": {
+    "prefix": ["timestamp"],
+    "body": "timestamp($0)",
+    "description": "The timestamp function"
+  },
+  "to_bool": {
+    "prefix": ["to_bool"],
+    "body": "to_bool($0)",
+    "description": "The to_bool function"
+  },
+  "to_float": {
+    "prefix": ["to_float"],
+    "body": "to_float($0)",
+    "description": "The to_float function"
+  },
+  "to_int": {
+    "prefix": ["to_int"],
+    "body": "to_int($0)",
+    "description": "The to_int function"
+  },
+  "to_regex": {
+    "prefix": ["to_regex"],
+    "body": "to_regex($0)",
+    "description": "The to_regex function"
+  },
+  "to_string": {
+    "prefix": ["to_string"],
+    "body": "to_string($0)",
+    "description": "The to_string function"
+  },
+  "to_syslog_facility": {
+    "prefix": ["to_syslog_facility"],
+    "body": "to_syslog_facility($0)",
+    "description": "The to_syslog_facility function"
+  },
+  "to_syslog_level": {
+    "prefix": ["to_syslog_level"],
+    "body": "to_syslog_level($0)",
+    "description": "The to_syslog_level function"
+  },
+  "to_syslog_severity": {
+    "prefix": ["to_syslog_severity"],
+    "body": "to_syslog_severity($0)",
+    "description": "The to_syslog_severity function"
+  },
+  "to_timestamp": {
+    "prefix": ["to_timestamp"],
+    "body": "to_timestamp($0)",
+    "description": "The to_timestamp function"
+  },
+  "to_unix_timestamp": {
+    "prefix": ["to_unix_timestamp"],
+    "body": "to_unix_timestamp($0)",
+    "description": "The to_unix_timestamp function"
+  },
+  "truncate": {
+    "prefix": ["truncate"],
+    "body": "truncate($0)",
+    "description": "The truncate function"
+  },
+  "unnest": {
+    "prefix": ["unnest"],
+    "body": "unnest($0)",
+    "description": "The unnest function"
+  },
+  "upcase": {
+    "prefix": ["upcase"],
+    "body": "upcase($0)",
+    "description": "The upcase function"
+  },
+  "uuid_v4": {
+    "prefix": ["uuid_v4"],
+    "body": "uuid_v4($0)",
+    "description": "The uuid_v4 function"
+  }
+}

@@ -11,6 +11,7 @@
     "Programming Languages"
   ],
   "scripts": {
+    "generate": "ejs --data-file ./data/functions.json --output-file ./snippets/vrl.json ./templates/snippets.ejs",
     "test": "vscode-tmgrammar-test --scope source.vrl --grammar ./syntaxes/vrl.tmLanguage.json --testcases \"test/**/*.vrl\""
   },
   "contributes": {
@@ -33,9 +34,16 @@
         "scopeName": "source.vrl",
         "path": "./syntaxes/vrl.tmLanguage.json"
       }
+    ],
+    "snippets": [
+      {
+        "language": "vrl",
+        "path": "./snippets/vrl.json"
+      }
     ]
   },
   "devDependencies": {
+    "ejs": "^3.1.6",
     "vscode-tmgrammar-test": "^0.0.11"
   }
 }

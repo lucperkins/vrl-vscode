@@ -1,0 +1,7 @@
+{<% for (x = 0; x < functions.length; x++) { %>
+  "<%= functions[x] %>": {
+    "prefix": ["<%= functions[x] %>"],
+    "body": "<%= functions[x] %>($0)",
+    "description": "The <%= functions[x] %> function"
+  }<% if (x < (functions.length - 1)) { %>,<% } %><% } %>
+}
