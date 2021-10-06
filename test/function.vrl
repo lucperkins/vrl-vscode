@@ -22,6 +22,6 @@
 #                                ^ punctuation.definition.args.end.vrl
 
 my_array = array([])
-#          ^^^^^ storage.type.variable.vrl
+#          ^^^^^ entity.name.function.vrl
 #               ^ punctuation.definition.args.begin.vrl
 #                  ^ punctuation.definition.args.end.vrl

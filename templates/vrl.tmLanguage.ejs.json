@@ -96,7 +96,7 @@
 			"name": "keyword.control.vrl",
 			"match": "\\b(if|else)\\b"
 		},
-		"regular-function": {
+		"function": {
 			"comment": "Function call",
 			"name": "meta.function.method.vrl",
 			"begin": "(<% for (var i = 0; i < functions.length; i++) { %><%= functions[i] %><% if (i < (functions.length -1)) { %>|<% } %><% } %>)([!]?)(\\()",

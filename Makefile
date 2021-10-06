@@ -1,9 +1,15 @@
-dev:
-	watchexec "yarn --ignore-engines test"
+WATCH = watchexec --watch test
+YARN = yarn --ignore-engines
 
-publish:
-	yarn publish
+dev:
+	$(WATCH) "make generate && make test"
+
+generate:
+	$(YARN) generate-snippets && $(YARN) generate-tmLanguage
 
 .PHONY: test
 test:
-	yarn test
+	$(YARN) test
+
+package:
+	$(YARN) package

@@ -4,7 +4,7 @@
   "description": "Vector Remap Language (VRL) support for VS Code",
   "publisher": "lucperkins",
   "license": "MPL-2.0",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -16,7 +16,7 @@
     "generate": "yarn generate-snippets && yarn generate-tmLanguage",
     "generate-snippets": "ejs --data-file ./data/functions.json --output-file ./snippets/vrl.json ./templates/snippets.ejs.json",
     "generate-tmLanguage": "ejs --data-file ./data/functions.json --output-file ./syntaxes/vrl.tmLanguage.json ./templates/vrl.tmLanguage.ejs.json",
-    "publish": "vsce package && vsce publish",
+    "package": "vsce package",
     "test": "vscode-tmgrammar-test --scope source.vrl --grammar ./syntaxes/vrl.tmLanguage.json --testcases \"test/**/*.vrl\""
   },
   "contributes": {
