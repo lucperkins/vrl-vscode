@@ -7,6 +7,9 @@
 			"include": "#comment"
 		},
 		{
+			"include": "#function"
+		},
+		{
 			"include": "#value"
 		}
 	],
@@ -55,6 +58,20 @@
 			"comment": "Comment",
 			"name": "comment",
 			"match": "(\\s+)?#(.*)$"
+		},
+		"function": {
+			"patterns": [
+				{
+					"comment": "Function",
+					"name": "entity.name.function",
+					"match": "(?<![.])\\b(append|decode_base64|decode_percent|encode_base64|encode_json|encode_key_value|encode_logfmt|now|push|etc)\\b"
+				},
+				{
+					"comment": "Type function",
+					"name": "storage.type.variable.vrl",
+					"match": "(?<![.])\\b(array|is_array|bool|is_boolean|float|is_float|is_null|is_regex|string|is_string|timestamp|is_timestamp)\\b"
+				}
+			]
 		},
 		"null": {
 			"comment": "Null value",
@@ -149,7 +166,7 @@
 		"plain-integer-or-float": {
 			"comment": "Plain integer or float value",
 			"name": "constant.numeric.vrl",
-			"match": "[+-]?([0-9]*[.])?[0-9]+"
+			"match": "([+-]?([0-9]*[.])?[0-9]+)"
 		},
 		"regex": {
 			"patterns": [

@@ -19,9 +19,15 @@ fruits = ["apple", "orange", "banana", [1, 2, 3], null, 37.5]
 my_regex = r'[+-]?([0-9]*[.])?[0-9]+'
 my_other_regex = r"[+-]?([0-9]*[.])?[0-9]+"
 
-array = [
+arr_1 = [
   1,
   # Comment
   2,
   3
 ]
+
+# Type functions
+array(.array)
+is_array(.is_array)
+timestamp(.timestamp)
+is_timestamp(.timestamp)

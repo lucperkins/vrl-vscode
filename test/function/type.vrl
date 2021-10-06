@@ -1,0 +1,4 @@
+# SYNTAX TEST "source.vrl" "type function"
+
+val = is_timestamp(.timestamp)
+#     ^^^^^^^^^^^^ storage.type.variable.vrl
