@@ -16,6 +16,9 @@
 			"include": "#function"
 		},
 		{
+			"include": "#operator"
+		},
+		{
 			"include": "#path"
 		},
 		{
@@ -198,6 +201,25 @@
 				{
 					"match": "[^\\s,]",
 					"name": "invalid.illegal.expected-dictionary-separator.vrl"
+				}
+			]
+		},
+		"operator": {
+			"patterns": [
+				{
+					"comment": "Assignment",
+					"name": "keyword.operator.assignment.vrl",
+					"match": "=|\\|\\|=|\\?\\?"
+				},
+				{
+					"comment": "Comparison",
+					"name": "keyword.operator.comparison.vrl",
+					"match": "(<|>)(=)?|==|!="
+				},
+				{
+					"comment": "Logical",
+					"name": "keyword.operator.logical.vrl",
+					"match": "&&|\\|\\|"
 				}
 			]
 		},
