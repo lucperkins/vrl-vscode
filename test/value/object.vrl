@@ -31,3 +31,16 @@ o3 = {"boolean": {"value": true}}
 #                ^ punctuation.definition.dictionary.begin.vrl
 #                              ^ punctuation.definition.dictionary.end.vrl
 #                               ^ punctuation.definition.dictionary.end.vrl
+
+# Object with comment
+o4 = {
+  "hello":
+  # Here is a comment
+# ^^^^^^^^^^^^^^^^^^^ comment.vrl
+}
+
+# Object with function call
+o5 = {"func": parse_json!(.message)}
+#    ^ punctuation.definition.dictionary.begin.vrl
+#           ^ punctuation.separator.dictionary.key-value.vrl
+#             ^^^^^^^^^^ entity.name.function.vrl

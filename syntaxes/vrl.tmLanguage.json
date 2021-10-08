@@ -217,16 +217,20 @@
 			},
 			"patterns": [
 				{
-					"comment": "The value",
+					"include": "#function"
+				},
+				{
 					"include": "#value"
 				},
 				{
-					"comment": "Variable",
 					"include": "#variable"
 				},
 				{
 					"match": "[^\\s,]",
 					"name": "invalid.illegal.expected-dictionary-separator.vrl"
+				},
+				{
+					"include": "#comment"
 				}
 			]
 		},

@@ -9,7 +9,7 @@
 #               ^^^^^^^^ variable.language.path.vrl
 
 . = encode_json!(.foo, bar: "baz")
-#   ^^^^^^^^^^^^^^^^^^ meta.function.method.vrl
+#   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.method.vrl
 #   ^^^^^^^^^^^ entity.name.function.vrl
 #              ^ keyword.operator.logical.vrl
 #               ^ punctuation.definition.args.begin.vrl

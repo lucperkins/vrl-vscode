@@ -96,10 +96,14 @@
 			"name": "keyword.control.vrl",
 			"match": "\\b(if|else)\\b"
 		},
+		"control-block": {
+			"comment": "if block",
+			"name": ""
+		},
 		"function": {
 			"comment": "Function call",
 			"name": "meta.function.method.vrl",
-			"begin": "(<% for (var i = 0; i < functions.length; i++) { %><%= functions[i] %><% if (i < (functions.length -1)) { %>|<% } %><% } %>)([!]?)(\\()",
+			"begin": "(abort|<% for (var i = 0; i < functions.length; i++) { %><%= functions[i] %><% if (i < (functions.length -1)) { %>|<% } %><% } %>)([!]?)(\\()",
 			"beginCaptures": {
 				"1": {
 					"name": "entity.name.function.vrl"
@@ -217,16 +221,20 @@
 			},
 			"patterns": [
 				{
-					"comment": "The value",
+					"include": "#function"
+				},
+				{
 					"include": "#value"
 				},
 				{
-					"comment": "Variable",
 					"include": "#variable"
 				},
 				{
 					"match": "[^\\s,]",
 					"name": "invalid.illegal.expected-dictionary-separator.vrl"
+				},
+				{
+					"include": "#comment"
 				}
 			]
 		},
@@ -298,7 +306,7 @@
 		"reserved": {
 			"comment": "Forbidden reserved terms",
 			"name": "invalid.illegal.reserved.vrl",
-			"match": "(abort|as|break|continue|for|impl|in|let|loop|return|self|std|then|this|type|until|use|while)"
+			"match": "(as|break|continue|for|impl|in|let|loop|return|self|std|then|this|type|until|use|while)"
 		},
 		"string": {
 			"patterns": [

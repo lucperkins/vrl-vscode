@@ -1,16 +1,23 @@
-. |= parse_regex!(.message, r'^(?P<timestamp>\d+/\d+/\d+ \d+:\d+:\d+ \+\d+) \[(?P<severity>\w+)\] (?P<pid>\d+)#(?P<tid>\d+):(?: \*(?P<connid>\d+))? (?P<message>.*)$')
+# Vector log event
+structured =
+  # Attempt to parse as Syslog
+  parse_syslog(.message) ??
+  # Attempt to parse as Common Log
+  parse_common_log(.message) ??
+  # Attempt to parse as JSON (otherwise abort)
+  parse_json!(.message)
 
-# Coerce parsed fields
-.timestamp = parse_timestamp(.timestamp, "%Y/%m/%d %H:%M:%S %z") ?? now()
-.pid = to_int!(.pid)
-.tid = to_int!(.tid)
-
-# Extract structured data
-message_parts = split(.message, ", ", limit: 2)
-structured = parse_key_value(message_parts[1], key_value_delimiter: ":", field_delimiter: ",") ?? {}
-.message = message_parts[0]
+# Merge the parsed object
 . = merge(., structured)
 
-obj = {
-  "foo": "bar"
+# Apply tags
+.tags = {
+  "environment": get_env_var!("ENV"),
+  "host": get_hostname!()
 }
+
+# Parse timestamp
+.timestamp = format_timestamp!(.timestamp, format: "%Y/%m/%d %H:%M:%S %z")
+
+# Add a unique ID to the event
+.id = uuid_v4()
