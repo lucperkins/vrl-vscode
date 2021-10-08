@@ -7,7 +7,7 @@ but also in transforms like [`route`][route] and [`sample`][sample].
 
 ## Screenshot
 
-![VRL VS Code screenshot](./images/screenshot.png)
+![VRL VS Code screenshot](https://raw.githubusercontent.com/lucperkins/vrl-vscode/main/images/screenshot.png)
 
 ## What's included here
 
