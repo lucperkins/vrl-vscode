@@ -4,7 +4,7 @@
   "description": "Vector Remap Language (VRL) support for VS Code",
   "publisher": "lucperkins",
   "license": "MPL-2.0",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.60.0"
   },
