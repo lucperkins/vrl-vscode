@@ -5,6 +5,10 @@ Code][vscode]. VRL is a domain-specific language (DSL) for handling observabilit
 metrics) that's used in conjunction with [Vector], most often in Vector's [`remap`][remap] transform
 but also in transforms like [`route`][route] and [`sample`][sample].
 
+## Screenshot
+
+![VRL VS Code screenshot](./images/screenshot.png)
+
 ## What's included here
 
 At the moment, language support mostly entails syntax highlighting for your `.vrl` files. I've also
