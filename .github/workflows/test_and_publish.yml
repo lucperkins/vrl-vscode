@@ -1,7 +1,5 @@
 name: Test and publish
 on: [push, pull_request]
-branches:
-  - main
 
 jobs:
   test_and_publish:
