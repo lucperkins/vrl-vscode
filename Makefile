@@ -13,3 +13,6 @@ test:
 
 package:
 	$(YARN) package
+
+publish: package
+	$(YARN) publish
