@@ -284,22 +284,6 @@
 							"name": "punctuation.definition.regexp.end.vrl"
 						}
 					}
-				},
-				{
-					"comment": "Double-quoted regex value",
-					"name": "string.regexp.vrl",
-					"begin": "r\"",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.regexp.begin.vrl"
-						}
-					},
-					"end": "\"",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.regexp.end.vrl"
-						}
-					}
 				}
 			]
 		},
@@ -416,27 +400,6 @@
 						}
 					},
 					"end": "'",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.end.vrl"
-						}
-					},
-					"patterns": [
-						{
-							"include": "#string-content"
-						}
-					]
-				},
-				{
-					"comment": "Double-quoted timestamp value",
-					"name": "string.quoted.double.vrl",
-					"begin": "t\"",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.begin.vrl"
-						}
-					},
-					"end": "\"",
 					"endCaptures": {
 						"0": {
 							"name": "punctuation.definition.string.end.vrl"
