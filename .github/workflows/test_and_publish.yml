@@ -1,8 +1,10 @@
-name: Test
+name: Test and publish
 on: [push, pull_request]
+branches:
+  - main
 
 jobs:
-  test:
+  test_and_publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,3 +15,8 @@ jobs:
         run: yarn install
       - name: Run tests
         run: yarn test
+      - name: Publish
+        if: success() && startsWith(github.ref, 'refs/tags/releases/')
+        run: yarn publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
