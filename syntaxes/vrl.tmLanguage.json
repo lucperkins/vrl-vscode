@@ -259,7 +259,7 @@
 		},
 		"path": {
 			"comment": "Event path",
-			"name": "variable.language.path.vrl",
+			"name": "variable.parameter.vrl",
 			"match": "\\.(\\w+)?"
 		},
 		"plain-integer-or-float": {

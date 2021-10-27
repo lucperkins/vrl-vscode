@@ -6,14 +6,14 @@
 #             ^ keyword.operator.logical.vrl
 #              ^ punctuation.definition.args.begin.vrl
 #                       ^ punctuation.definition.args.end.vrl
-#               ^^^^^^^^ variable.language.path.vrl
+#               ^^^^^^^^ variable.parameter.vrl
 
 . = encode_json!(.foo, bar: "baz")
 #   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.function.method.vrl
 #   ^^^^^^^^^^^ entity.name.function.vrl
 #              ^ keyword.operator.logical.vrl
 #               ^ punctuation.definition.args.begin.vrl
-#                ^^^^ variable.language.path.vrl
+#                ^^^^ variable.parameter.vrl
 #                    ^ punctuation.definition.separator.vrl
 #                      ^^^ variable.vrl
 #                           ^ punctuation.definition.string.begin.vrl
