@@ -1,6 +1,9 @@
 WATCH = watchexec --watch templates --watch test
 YARN = yarn --ignore-engines
 
+clean:
+	rm *.vsix
+
 dev:
 	$(WATCH) "make generate && make test"
 
