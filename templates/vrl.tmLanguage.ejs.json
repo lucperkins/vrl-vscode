@@ -260,7 +260,7 @@
 		"path": {
 			"comment": "Event path",
 			"name": "variable.language.path.vrl",
-			"match": "\\.(\\w+)"
+			"match": "\\.(\\w+)?"
 		},
 		"plain-integer-or-float": {
 			"comment": "Plain integer or float value",

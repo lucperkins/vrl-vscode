@@ -1,4 +1,4 @@
-WATCH = watchexec --watch test
+WATCH = watchexec --watch templates --watch test
 YARN = yarn --ignore-engines
 
 dev:
