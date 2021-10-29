@@ -1,1 +1,5 @@
 # SYNTAX TEST "source.vrl" "if-else"
+
+if true {
+# <-- keyword.control.vrl
+}

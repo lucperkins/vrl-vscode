@@ -94,6 +94,11 @@
     "body": "exists($0)",
     "description": "The exists function"
   },
+  "find": {
+    "prefix": ["find"],
+    "body": "find($0)",
+    "description": "The find function"
+  },
   "flatten": {
     "prefix": ["flatten"],
     "body": "flatten($0)",
@@ -123,6 +128,11 @@
     "prefix": ["format_timestamp"],
     "body": "format_timestamp($0)",
     "description": "The format_timestamp function"
+  },
+  "get": {
+    "prefix": ["get"],
+    "body": "get($0)",
+    "description": "The get function"
   },
   "get_env_var": {
     "prefix": ["get_env_var"],
@@ -419,6 +429,11 @@
     "body": "redact($0)",
     "description": "The redact function"
   },
+  "remove": {
+    "prefix": ["remove"],
+    "body": "remove($0)",
+    "description": "The remove function"
+  },
   "replace": {
     "prefix": ["replace"],
     "body": "replace($0)",
@@ -428,6 +443,11 @@
     "prefix": ["round"],
     "body": "round($0)",
     "description": "The round function"
+  },
+  "set": {
+    "prefix": ["set"],
+    "body": "set($0)",
+    "description": "The set function"
   },
   "sha1": {
     "prefix": ["sha1"],
@@ -538,6 +558,11 @@
     "prefix": ["truncate"],
     "body": "truncate($0)",
     "description": "The truncate function"
+  },
+  "unique": {
+    "prefix": ["unique"],
+    "body": "unique($0)",
+    "description": "The unique function"
   },
   "unnest": {
     "prefix": ["unnest"],

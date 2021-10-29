@@ -1,12 +1,15 @@
 # SYNTAX TEST "source.vrl" "path"
 
-  .
-# ^ variable.parameter.vrl
+.
+# <- variable.parameter.vrl
 
 .foo.bar.baz
-# ^^^^ variable.parameter.vrl
 #   ^^^^ variable.parameter.vrl
 #       ^^^^ variable.parameter.vrl
 
-  .field = "value"
-# ^^^^^^ variable.parameter.vrl
+.field = "value"
+# <------ variable.parameter.vrl
+#      ^ keyword.operator.assignment.vrl
+#        ^ punctuation.definition.string.begin.vrl
+#         ^^^^^ string.quoted.double.vrl
+#              ^ punctuation.definition.string.end.vrl

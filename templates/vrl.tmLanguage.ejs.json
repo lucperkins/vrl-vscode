@@ -96,10 +96,6 @@
 			"name": "keyword.control.vrl",
 			"match": "\\b(if|else)\\b"
 		},
-		"control-block": {
-			"comment": "if block",
-			"name": ""
-		},
 		"function": {
 			"comment": "Function call",
 			"name": "meta.function.method.vrl",
@@ -140,6 +136,10 @@
 				}
 			]
 		},
+    "control-block": {
+      "comment": "if/else block",
+      "name": ""
+    },
 		"null": {
 			"comment": "Null value",
 			"name": "constant.language.null.vrl",

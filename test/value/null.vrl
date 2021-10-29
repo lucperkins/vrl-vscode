@@ -1,14 +1,20 @@
 # SYNTAX TEST "source.vrl" "null"
 
 n1 = null
+# <-- variable.vrl
+#  ^ keyword.operator.assignment.vrl
 #    ^^^^ constant.language.null.vrl
 
 # Not null
 n2 = "null"
+# <-- variable.vrl
+#  ^ keyword.operator.assignment.vrl
 #     ^^^^ string.vrl
 
 # In object
 o1 = { "null":   null }
+# <-- variable.vrl
+#  ^ keyword.operator.assignment.vrl
 #                ^^^^ constant.language.null.vrl
 
 # In array
