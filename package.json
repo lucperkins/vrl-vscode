@@ -2,6 +2,9 @@
   "name": "vrl-vscode",
   "displayName": "Vector Remap Language",
   "description": "Vector Remap Language (VRL) support for VS Code",
+  "author": {
+    "name": "Luc Perkins"
+  },
   "publisher": "lucperkins",
   "license": "MPL-2.0",
   "version": "0.1.4",
@@ -9,9 +12,26 @@
     "vscode": "^1.60.0"
   },
   "repository": "https://github.com/lucperkins/vrl-vscode",
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=lucperkins.vrl-vscode",
+  "bugs": {
+    "url": "https://github.com/lucperkins/vrl-vscode/issues"
+  },
   "categories": [
     "Programming Languages"
   ],
+  "keywords": [
+    "vector",
+    "vrl",
+    "vector remap language",
+    "remap",
+    "remapping",
+    "transforms",
+    "observability"
+  ],
+  "activationEvents": [
+    "workspaceContains::**/*.vrl"
+  ],
+  
   "scripts": {
     "generate": "yarn generate-snippets && yarn generate-tmLanguage",
     "generate-snippets": "ejs --data-file ./data/functions.json --output-file ./snippets/vrl.json ./templates/snippets.ejs.json",
@@ -26,7 +46,7 @@
         "id": "vrl",
         "aliases": [
           "Vector Remap Language",
-          "vrl"
+          "VRL"
         ],
         "extensions": [
           ".vrl"
