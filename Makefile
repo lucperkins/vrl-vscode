@@ -1,5 +1,6 @@
 WATCH = watchexec --watch templates --watch test
 YARN = yarn --ignore-engines
+VRL_FUNC_JSON= ./data/functions.json
 
 clean:
 	rm *.vsix
@@ -19,3 +20,6 @@ package:
 
 publish: package
 	$(YARN) publish
+
+fetch-vrl-data:
+	curl https://vector.dev/index.json | jq .vrl.functions | jq 'keys' > "$(VRL_FUNC_JSON)"
