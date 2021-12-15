@@ -16,7 +16,7 @@ included, however, [snippets] for VRL [functions]. If you begin typing the name 
 function, VS Code's Intellisense suggests possible completions.
 
 I do hope to expand the feature set over time, but for now I hope that syntax highlighting and
-function name Intellisense will easire and more fun and to write VRL!
+function name Intellisense will make it easier and more fun and to write VRL!
 
 ## Status
 
