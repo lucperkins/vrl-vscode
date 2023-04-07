@@ -109,9 +109,16 @@
 				},
 				"3": {
 					"name": "punctuation.definition.args.begin.vrl"
+				},
+				"4": {
+					"name": "keyword.operator.assignment.vrl"
+				},
+				"5": {
+					"name": "punctuation.definition.args.begin.vrl"
 				}
 			},
-			"end": "\\)",
+			
+			"end": "((\\)(?!\\s*-\\>))|(\\|\\s*\\{))",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.definition.args.end.vrl"
@@ -136,11 +143,11 @@
 				}
 			]
 		},
-    "control-block": {
-      "comment": "if/else block",
-      "name": ""
-    },
-		"null": {
+		"control-block": {
+			"comment": "if/else block",
+			"name": ""
+		  },
+		  		"null": {
 			"comment": "Null value",
 			"name": "constant.language.null.vrl",
 			"match": "\\b(null)\\b"
@@ -243,7 +250,7 @@
 				{
 					"comment": "Assignment",
 					"name": "keyword.operator.assignment.vrl",
-					"match": "=|\\|=|\\?\\?"
+					"match": "=|\\|=|\\?\\?|(-\\>\\s*\\|)"
 				},
 				{
 					"comment": "Comparison",
@@ -253,7 +260,7 @@
 				{
 					"comment": "Logical",
 					"name": "keyword.operator.logical.vrl",
-					"match": "&&|\\|\\|"
+					"match": "&&|\\|\\||;"
 				}
 			]
 		},
