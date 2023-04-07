@@ -162,7 +162,7 @@
 		"object": {
 			"comment": "Object value",
 			"name": "meta.structure.dictionary.vrl",
-			"begin": "\\{",
+			"begin": "[=|:](\\s?)+\\{",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.definition.dictionary.begin.vrl"
@@ -250,7 +250,7 @@
 				{
 					"comment": "Assignment",
 					"name": "keyword.operator.assignment.vrl",
-					"match": "=|\\|=|\\?\\?|(-\\>\\s*\\|)"
+					"match": "=|\\|=|\\?\\?|-\\>\\s*\\|"
 				},
 				{
 					"comment": "Comparison",
