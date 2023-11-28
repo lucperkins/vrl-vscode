@@ -2,7 +2,7 @@
 
 # Simple object
 o1 = { "foo": "bar" }
-#    ^ punctuation.definition.dictionary.begin.vrl
+#    ^ source.vrl
 #                   ^ punctuation.definition.dictionary.end.vrl
 #      ^ punctuation.support.type.property-name.begin.vrl
 #          ^ punctuation.support.type.property-name.end.vrl

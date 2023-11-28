@@ -6,13 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: DeterminateSystems/flake-checker@main
+        with:
+          fail-mode: true
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache@main
       - uses: actions/setup-node@v1
         with:
           node-version: 16
       - name: Install Node.js dependencies
-        run: yarn install
+        run: pnpm install
       - name: Run tests
-        run: yarn test
+        run: pnpm run test
       - name: Publish
         if: success() && startsWith(github.ref, 'refs/tags/releases/')
         run: yarn publish
