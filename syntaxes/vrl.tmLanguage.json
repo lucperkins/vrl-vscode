@@ -96,6 +96,10 @@
 			"name": "keyword.control.vrl",
 			"match": "\\b(if|else)\\b"
 		},
+		"control-block": {
+			"comment": "if block",
+			"name": ""
+		},
 		"function": {
 			"comment": "Function call",
 			"name": "meta.function.method.vrl",
@@ -109,9 +113,16 @@
 				},
 				"3": {
 					"name": "punctuation.definition.args.begin.vrl"
+				},
+				"4": {
+					"name": "keyword.operator.assignment.vrl"
+				},
+				"5": {
+					"name": "punctuation.definition.args.begin.vrl"
 				}
 			},
-			"end": "\\)",
+			
+			"end": "((\\)(?!\\s*-\\>))|(\\|\\s*\\{))",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.definition.args.end.vrl"
@@ -136,10 +147,6 @@
 				}
 			]
 		},
-    "control-block": {
-      "comment": "if/else block",
-      "name": ""
-    },
 		"null": {
 			"comment": "Null value",
 			"name": "constant.language.null.vrl",
@@ -155,7 +162,7 @@
 		"object": {
 			"comment": "Object value",
 			"name": "meta.structure.dictionary.vrl",
-			"begin": "\\{",
+			"begin": "[=|:](\\s?)+\\{",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.definition.dictionary.begin.vrl"
@@ -243,7 +250,7 @@
 				{
 					"comment": "Assignment",
 					"name": "keyword.operator.assignment.vrl",
-					"match": "=|\\|=|\\?\\?"
+					"match": "=|\\|=|\\?\\?|-\\>\\s*\\|"
 				},
 				{
 					"comment": "Comparison",
@@ -253,13 +260,13 @@
 				{
 					"comment": "Logical",
 					"name": "keyword.operator.logical.vrl",
-					"match": "&&|\\|\\|"
+					"match": "&&|\\|\\||;"
 				}
 			]
 		},
 		"path": {
 			"comment": "Event path",
-			"name": "variable.parameter.vrl",
+			"name": "variable.language.path.vrl",
 			"match": "\\.(\\w+)?"
 		},
 		"plain-integer-or-float": {
