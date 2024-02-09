@@ -10,16 +10,13 @@ jobs:
         with:
           fail-mode: true
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache@main
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
+      - uses: DeterminateSystems/magic-nix-cache-action@main
       - name: Install Node.js dependencies
-        run: pnpm install
+        run: nix develop --command pnpm install
       - name: Run tests
-        run: pnpm run test
+        run: nix develop --command pnpm run test
       - name: Publish
         if: success() && startsWith(github.ref, 'refs/tags/releases/')
-        run: yarn publish
+        run: nix develop --command pnpm run publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
