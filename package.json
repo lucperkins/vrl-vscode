@@ -11,7 +11,6 @@
   "engines": {
     "vscode": "^1.60.0"
   },
-  "main": "./syntaxes/vrl.tmLanguage.json",
   "repository": "https://github.com/lucperkins/vrl-vscode",
   "homepage": "https://marketplace.visualstudio.com/items?itemName=lucperkins.vrl-vscode",
   "bugs": {
@@ -28,9 +27,6 @@
     "remapping",
     "transforms",
     "observability"
-  ],
-  "activationEvents": [
-    "workspaceContains::**/*.vrl"
   ],
   "scripts": {
     "generate": "npm run generate-snippets && npm run generate-tmLanguage",
