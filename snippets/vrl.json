@@ -1,4 +1,14 @@
 {
+  "abs": {
+    "prefix": ["abs"],
+    "body": "abs($0)",
+    "description": "The abs function"
+  },
+  "aggregate_vector_metrics": {
+    "prefix": ["aggregate_vector_metrics"],
+    "body": "aggregate_vector_metrics($0)",
+    "description": "The aggregate_vector_metrics function"
+  },
   "append": {
     "prefix": ["append"],
     "body": "append($0)",
@@ -19,15 +29,35 @@
     "body": "assert_eq($0)",
     "description": "The assert_eq function"
   },
+  "basename": {
+    "prefix": ["basename"],
+    "body": "basename($0)",
+    "description": "The basename function"
+  },
   "bool": {
     "prefix": ["bool"],
     "body": "bool($0)",
     "description": "The bool function"
   },
+  "camelcase": {
+    "prefix": ["camelcase"],
+    "body": "camelcase($0)",
+    "description": "The camelcase function"
+  },
   "ceil": {
     "prefix": ["ceil"],
     "body": "ceil($0)",
     "description": "The ceil function"
+  },
+  "chunks": {
+    "prefix": ["chunks"],
+    "body": "chunks($0)",
+    "description": "The chunks function"
+  },
+  "community_id": {
+    "prefix": ["community_id"],
+    "body": "community_id($0)",
+    "description": "The community_id function"
   },
   "compact": {
     "prefix": ["compact"],
@@ -39,35 +69,125 @@
     "body": "contains($0)",
     "description": "The contains function"
   },
+  "contains_all": {
+    "prefix": ["contains_all"],
+    "body": "contains_all($0)",
+    "description": "The contains_all function"
+  },
+  "crc": {
+    "prefix": ["crc"],
+    "body": "crc($0)",
+    "description": "The crc function"
+  },
+  "decode_base16": {
+    "prefix": ["decode_base16"],
+    "body": "decode_base16($0)",
+    "description": "The decode_base16 function"
+  },
   "decode_base64": {
     "prefix": ["decode_base64"],
     "body": "decode_base64($0)",
     "description": "The decode_base64 function"
+  },
+  "decode_charset": {
+    "prefix": ["decode_charset"],
+    "body": "decode_charset($0)",
+    "description": "The decode_charset function"
+  },
+  "decode_gzip": {
+    "prefix": ["decode_gzip"],
+    "body": "decode_gzip($0)",
+    "description": "The decode_gzip function"
+  },
+  "decode_lz4": {
+    "prefix": ["decode_lz4"],
+    "body": "decode_lz4($0)",
+    "description": "The decode_lz4 function"
+  },
+  "decode_mime_q": {
+    "prefix": ["decode_mime_q"],
+    "body": "decode_mime_q($0)",
+    "description": "The decode_mime_q function"
   },
   "decode_percent": {
     "prefix": ["decode_percent"],
     "body": "decode_percent($0)",
     "description": "The decode_percent function"
   },
+  "decode_punycode": {
+    "prefix": ["decode_punycode"],
+    "body": "decode_punycode($0)",
+    "description": "The decode_punycode function"
+  },
+  "decode_snappy": {
+    "prefix": ["decode_snappy"],
+    "body": "decode_snappy($0)",
+    "description": "The decode_snappy function"
+  },
+  "decode_zlib": {
+    "prefix": ["decode_zlib"],
+    "body": "decode_zlib($0)",
+    "description": "The decode_zlib function"
+  },
+  "decode_zstd": {
+    "prefix": ["decode_zstd"],
+    "body": "decode_zstd($0)",
+    "description": "The decode_zstd function"
+  },
   "decrypt": {
     "prefix": ["decrypt"],
     "body": "decrypt($0)",
     "description": "The decrypt function"
+  },
+  "decrypt_ip": {
+    "prefix": ["decrypt_ip"],
+    "body": "decrypt_ip($0)",
+    "description": "The decrypt_ip function"
   },
   "del": {
     "prefix": ["del"],
     "body": "del($0)",
     "description": "The del function"
   },
+  "dirname": {
+    "prefix": ["dirname"],
+    "body": "dirname($0)",
+    "description": "The dirname function"
+  },
+  "dns_lookup": {
+    "prefix": ["dns_lookup"],
+    "body": "dns_lookup($0)",
+    "description": "The dns_lookup function"
+  },
   "downcase": {
     "prefix": ["downcase"],
     "body": "downcase($0)",
     "description": "The downcase function"
   },
+  "encode_base16": {
+    "prefix": ["encode_base16"],
+    "body": "encode_base16($0)",
+    "description": "The encode_base16 function"
+  },
   "encode_base64": {
     "prefix": ["encode_base64"],
     "body": "encode_base64($0)",
     "description": "The encode_base64 function"
+  },
+  "encode_charset": {
+    "prefix": ["encode_charset"],
+    "body": "encode_charset($0)",
+    "description": "The encode_charset function"
+  },
+  "encode_csv": {
+    "prefix": ["encode_csv"],
+    "body": "encode_csv($0)",
+    "description": "The encode_csv function"
+  },
+  "encode_gzip": {
+    "prefix": ["encode_gzip"],
+    "body": "encode_gzip($0)",
+    "description": "The encode_gzip function"
   },
   "encode_json": {
     "prefix": ["encode_json"],
@@ -84,15 +204,50 @@
     "body": "encode_logfmt($0)",
     "description": "The encode_logfmt function"
   },
+  "encode_lz4": {
+    "prefix": ["encode_lz4"],
+    "body": "encode_lz4($0)",
+    "description": "The encode_lz4 function"
+  },
   "encode_percent": {
     "prefix": ["encode_percent"],
     "body": "encode_percent($0)",
     "description": "The encode_percent function"
   },
+  "encode_proto": {
+    "prefix": ["encode_proto"],
+    "body": "encode_proto($0)",
+    "description": "The encode_proto function"
+  },
+  "encode_punycode": {
+    "prefix": ["encode_punycode"],
+    "body": "encode_punycode($0)",
+    "description": "The encode_punycode function"
+  },
+  "encode_snappy": {
+    "prefix": ["encode_snappy"],
+    "body": "encode_snappy($0)",
+    "description": "The encode_snappy function"
+  },
+  "encode_zlib": {
+    "prefix": ["encode_zlib"],
+    "body": "encode_zlib($0)",
+    "description": "The encode_zlib function"
+  },
+  "encode_zstd": {
+    "prefix": ["encode_zstd"],
+    "body": "encode_zstd($0)",
+    "description": "The encode_zstd function"
+  },
   "encrypt": {
     "prefix": ["encrypt"],
     "body": "encrypt($0)",
     "description": "The encrypt function"
+  },
+  "encrypt_ip": {
+    "prefix": ["encrypt_ip"],
+    "body": "encrypt_ip($0)",
+    "description": "The encrypt_ip function"
   },
   "ends_with": {
     "prefix": ["ends_with"],
@@ -104,6 +259,11 @@
     "body": "exists($0)",
     "description": "The exists function"
   },
+  "filter": {
+    "prefix": ["filter"],
+    "body": "filter($0)",
+    "description": "The filter function"
+  },
   "find": {
     "prefix": ["find"],
     "body": "find($0)",
@@ -113,6 +273,11 @@
     "prefix": ["find_enrichment_table_records"],
     "body": "find_enrichment_table_records($0)",
     "description": "The find_enrichment_table_records function"
+  },
+  "find_vector_metrics": {
+    "prefix": ["find_vector_metrics"],
+    "body": "find_vector_metrics($0)",
+    "description": "The find_vector_metrics function"
   },
   "flatten": {
     "prefix": ["flatten"],
@@ -149,6 +314,16 @@
     "body": "format_timestamp($0)",
     "description": "The format_timestamp function"
   },
+  "from_entries": {
+    "prefix": ["from_entries"],
+    "body": "from_entries($0)",
+    "description": "The from_entries function"
+  },
+  "from_unix_timestamp": {
+    "prefix": ["from_unix_timestamp"],
+    "body": "from_unix_timestamp($0)",
+    "description": "The from_unix_timestamp function"
+  },
   "get": {
     "prefix": ["get"],
     "body": "get($0)",
@@ -169,10 +344,35 @@
     "body": "get_hostname($0)",
     "description": "The get_hostname function"
   },
-  "get_metadata_field": {
-    "prefix": ["get_metadata_field"],
-    "body": "get_metadata_field($0)",
-    "description": "The get_metadata_field function"
+  "get_secret": {
+    "prefix": ["get_secret"],
+    "body": "get_secret($0)",
+    "description": "The get_secret function"
+  },
+  "get_timezone_name": {
+    "prefix": ["get_timezone_name"],
+    "body": "get_timezone_name($0)",
+    "description": "The get_timezone_name function"
+  },
+  "get_vector_metric": {
+    "prefix": ["get_vector_metric"],
+    "body": "get_vector_metric($0)",
+    "description": "The get_vector_metric function"
+  },
+  "haversine": {
+    "prefix": ["haversine"],
+    "body": "haversine($0)",
+    "description": "The haversine function"
+  },
+  "hmac": {
+    "prefix": ["hmac"],
+    "body": "hmac($0)",
+    "description": "The hmac function"
+  },
+  "http_request": {
+    "prefix": ["http_request"],
+    "body": "http_request($0)",
+    "description": "The http_request function"
   },
   "includes": {
     "prefix": ["includes"],
@@ -249,6 +449,16 @@
     "body": "is_integer($0)",
     "description": "The is_integer function"
   },
+  "is_ipv4": {
+    "prefix": ["is_ipv4"],
+    "body": "is_ipv4($0)",
+    "description": "The is_ipv4 function"
+  },
+  "is_ipv6": {
+    "prefix": ["is_ipv6"],
+    "body": "is_ipv6($0)",
+    "description": "The is_ipv6 function"
+  },
   "is_json": {
     "prefix": ["is_json"],
     "body": "is_json($0)",
@@ -288,6 +498,16 @@
     "prefix": ["join"],
     "body": "join($0)",
     "description": "The join function"
+  },
+  "kebabcase": {
+    "prefix": ["kebabcase"],
+    "body": "kebabcase($0)",
+    "description": "The kebabcase function"
+  },
+  "keys": {
+    "prefix": ["keys"],
+    "body": "keys($0)",
+    "description": "The keys function"
   },
   "length": {
     "prefix": ["length"],
@@ -339,6 +559,11 @@
     "body": "merge($0)",
     "description": "The merge function"
   },
+  "mod": {
+    "prefix": ["mod"],
+    "body": "mod($0)",
+    "description": "The mod function"
+  },
   "now": {
     "prefix": ["now"],
     "body": "now($0)",
@@ -348,6 +573,11 @@
     "prefix": ["object"],
     "body": "object($0)",
     "description": "The object function"
+  },
+  "object_from_array": {
+    "prefix": ["object_from_array"],
+    "body": "object_from_array($0)",
+    "description": "The object_from_array function"
   },
   "parse_apache_log": {
     "prefix": ["parse_apache_log"],
@@ -369,6 +599,21 @@
     "body": "parse_aws_vpc_flow_log($0)",
     "description": "The parse_aws_vpc_flow_log function"
   },
+  "parse_bytes": {
+    "prefix": ["parse_bytes"],
+    "body": "parse_bytes($0)",
+    "description": "The parse_bytes function"
+  },
+  "parse_cbor": {
+    "prefix": ["parse_cbor"],
+    "body": "parse_cbor($0)",
+    "description": "The parse_cbor function"
+  },
+  "parse_cef": {
+    "prefix": ["parse_cef"],
+    "body": "parse_cef($0)",
+    "description": "The parse_cef function"
+  },
   "parse_common_log": {
     "prefix": ["parse_common_log"],
     "body": "parse_common_log($0)",
@@ -379,10 +624,25 @@
     "body": "parse_csv($0)",
     "description": "The parse_csv function"
   },
+  "parse_dnstap": {
+    "prefix": ["parse_dnstap"],
+    "body": "parse_dnstap($0)",
+    "description": "The parse_dnstap function"
+  },
   "parse_duration": {
     "prefix": ["parse_duration"],
     "body": "parse_duration($0)",
     "description": "The parse_duration function"
+  },
+  "parse_etld": {
+    "prefix": ["parse_etld"],
+    "body": "parse_etld($0)",
+    "description": "The parse_etld function"
+  },
+  "parse_float": {
+    "prefix": ["parse_float"],
+    "body": "parse_float($0)",
+    "description": "The parse_float function"
   },
   "parse_glog": {
     "prefix": ["parse_glog"],
@@ -398,6 +658,11 @@
     "prefix": ["parse_groks"],
     "body": "parse_groks($0)",
     "description": "The parse_groks function"
+  },
+  "parse_influxdb": {
+    "prefix": ["parse_influxdb"],
+    "body": "parse_influxdb($0)",
+    "description": "The parse_influxdb function"
   },
   "parse_int": {
     "prefix": ["parse_int"],
@@ -433,6 +698,11 @@
     "prefix": ["parse_nginx_log"],
     "body": "parse_nginx_log($0)",
     "description": "The parse_nginx_log function"
+  },
+  "parse_proto": {
+    "prefix": ["parse_proto"],
+    "body": "parse_proto($0)",
+    "description": "The parse_proto function"
   },
   "parse_query_string": {
     "prefix": ["parse_query_string"],
@@ -484,15 +754,45 @@
     "body": "parse_xml($0)",
     "description": "The parse_xml function"
   },
+  "parse_yaml": {
+    "prefix": ["parse_yaml"],
+    "body": "parse_yaml($0)",
+    "description": "The parse_yaml function"
+  },
+  "pascalcase": {
+    "prefix": ["pascalcase"],
+    "body": "pascalcase($0)",
+    "description": "The pascalcase function"
+  },
+  "pop": {
+    "prefix": ["pop"],
+    "body": "pop($0)",
+    "description": "The pop function"
+  },
   "push": {
     "prefix": ["push"],
     "body": "push($0)",
     "description": "The push function"
   },
+  "random_bool": {
+    "prefix": ["random_bool"],
+    "body": "random_bool($0)",
+    "description": "The random_bool function"
+  },
   "random_bytes": {
     "prefix": ["random_bytes"],
     "body": "random_bytes($0)",
     "description": "The random_bytes function"
+  },
+  "random_float": {
+    "prefix": ["random_float"],
+    "body": "random_float($0)",
+    "description": "The random_float function"
+  },
+  "random_int": {
+    "prefix": ["random_int"],
+    "body": "random_int($0)",
+    "description": "The random_int function"
   },
   "redact": {
     "prefix": ["redact"],
@@ -504,30 +804,55 @@
     "body": "remove($0)",
     "description": "The remove function"
   },
-  "remove_metadata_field": {
-    "prefix": ["remove_metadata_field"],
-    "body": "remove_metadata_field($0)",
-    "description": "The remove_metadata_field function"
+  "remove_secret": {
+    "prefix": ["remove_secret"],
+    "body": "remove_secret($0)",
+    "description": "The remove_secret function"
   },
   "replace": {
     "prefix": ["replace"],
     "body": "replace($0)",
     "description": "The replace function"
   },
+  "replace_with": {
+    "prefix": ["replace_with"],
+    "body": "replace_with($0)",
+    "description": "The replace_with function"
+  },
+  "reverse_dns": {
+    "prefix": ["reverse_dns"],
+    "body": "reverse_dns($0)",
+    "description": "The reverse_dns function"
+  },
   "round": {
     "prefix": ["round"],
     "body": "round($0)",
     "description": "The round function"
+  },
+  "screamingsnakecase": {
+    "prefix": ["screamingsnakecase"],
+    "body": "screamingsnakecase($0)",
+    "description": "The screamingsnakecase function"
+  },
+  "seahash": {
+    "prefix": ["seahash"],
+    "body": "seahash($0)",
+    "description": "The seahash function"
   },
   "set": {
     "prefix": ["set"],
     "body": "set($0)",
     "description": "The set function"
   },
-  "set_metadata_field": {
-    "prefix": ["set_metadata_field"],
-    "body": "set_metadata_field($0)",
-    "description": "The set_metadata_field function"
+  "set_secret": {
+    "prefix": ["set_secret"],
+    "body": "set_secret($0)",
+    "description": "The set_secret function"
+  },
+  "set_semantic_meaning": {
+    "prefix": ["set_semantic_meaning"],
+    "body": "set_semantic_meaning($0)",
+    "description": "The set_semantic_meaning function"
   },
   "sha1": {
     "prefix": ["sha1"],
@@ -544,15 +869,35 @@
     "body": "sha3($0)",
     "description": "The sha3 function"
   },
+  "shannon_entropy": {
+    "prefix": ["shannon_entropy"],
+    "body": "shannon_entropy($0)",
+    "description": "The shannon_entropy function"
+  },
+  "sieve": {
+    "prefix": ["sieve"],
+    "body": "sieve($0)",
+    "description": "The sieve function"
+  },
   "slice": {
     "prefix": ["slice"],
     "body": "slice($0)",
     "description": "The slice function"
   },
+  "snakecase": {
+    "prefix": ["snakecase"],
+    "body": "snakecase($0)",
+    "description": "The snakecase function"
+  },
   "split": {
     "prefix": ["split"],
     "body": "split($0)",
     "description": "The split function"
+  },
+  "split_path": {
+    "prefix": ["split_path"],
+    "body": "split_path($0)",
+    "description": "The split_path function"
   },
   "starts_with": {
     "prefix": ["starts_with"],
@@ -584,6 +929,16 @@
     "body": "tag_types_externally($0)",
     "description": "The tag_types_externally function"
   },
+  "tally": {
+    "prefix": ["tally"],
+    "body": "tally($0)",
+    "description": "The tally function"
+  },
+  "tally_value": {
+    "prefix": ["tally_value"],
+    "body": "tally_value($0)",
+    "description": "The tally_value function"
+  },
   "timestamp": {
     "prefix": ["timestamp"],
     "body": "timestamp($0)",
@@ -593,6 +948,11 @@
     "prefix": ["to_bool"],
     "body": "to_bool($0)",
     "description": "The to_bool function"
+  },
+  "to_entries": {
+    "prefix": ["to_entries"],
+    "body": "to_entries($0)",
+    "description": "The to_entries function"
   },
   "to_float": {
     "prefix": ["to_float"],
@@ -619,6 +979,11 @@
     "body": "to_syslog_facility($0)",
     "description": "The to_syslog_facility function"
   },
+  "to_syslog_facility_code": {
+    "prefix": ["to_syslog_facility_code"],
+    "body": "to_syslog_facility_code($0)",
+    "description": "The to_syslog_facility_code function"
+  },
   "to_syslog_level": {
     "prefix": ["to_syslog_level"],
     "body": "to_syslog_level($0)",
@@ -629,11 +994,6 @@
     "body": "to_syslog_severity($0)",
     "description": "The to_syslog_severity function"
   },
-  "to_timestamp": {
-    "prefix": ["to_timestamp"],
-    "body": "to_timestamp($0)",
-    "description": "The to_timestamp function"
-  },
   "to_unix_timestamp": {
     "prefix": ["to_unix_timestamp"],
     "body": "to_unix_timestamp($0)",
@@ -643,6 +1003,16 @@
     "prefix": ["truncate"],
     "body": "truncate($0)",
     "description": "The truncate function"
+  },
+  "type_def": {
+    "prefix": ["type_def"],
+    "body": "type_def($0)",
+    "description": "The type_def function"
+  },
+  "unflatten": {
+    "prefix": ["unflatten"],
+    "body": "unflatten($0)",
+    "description": "The unflatten function"
   },
   "unique": {
     "prefix": ["unique"],
@@ -659,9 +1029,39 @@
     "body": "upcase($0)",
     "description": "The upcase function"
   },
+  "uuid_from_friendly_id": {
+    "prefix": ["uuid_from_friendly_id"],
+    "body": "uuid_from_friendly_id($0)",
+    "description": "The uuid_from_friendly_id function"
+  },
   "uuid_v4": {
     "prefix": ["uuid_v4"],
     "body": "uuid_v4($0)",
     "description": "The uuid_v4 function"
+  },
+  "uuid_v7": {
+    "prefix": ["uuid_v7"],
+    "body": "uuid_v7($0)",
+    "description": "The uuid_v7 function"
+  },
+  "validate_json_schema": {
+    "prefix": ["validate_json_schema"],
+    "body": "validate_json_schema($0)",
+    "description": "The validate_json_schema function"
+  },
+  "values": {
+    "prefix": ["values"],
+    "body": "values($0)",
+    "description": "The values function"
+  },
+  "xxhash": {
+    "prefix": ["xxhash"],
+    "body": "xxhash($0)",
+    "description": "The xxhash function"
+  },
+  "zip": {
+    "prefix": ["zip"],
+    "body": "zip($0)",
+    "description": "The zip function"
   }
 }
