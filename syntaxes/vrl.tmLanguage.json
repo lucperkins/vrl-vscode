@@ -16,6 +16,9 @@
 			"include": "#function"
 		},
 		{
+			"include": "#object"
+		},
+		{
 			"include": "#operator"
 		},
 		{
@@ -96,10 +99,6 @@
 			"name": "keyword.control.vrl",
 			"match": "\\b(if|else)\\b"
 		},
-		"control-block": {
-			"comment": "if block",
-			"name": ""
-		},
 		"function": {
 			"comment": "Function call",
 			"name": "meta.function.method.vrl",
@@ -113,16 +112,9 @@
 				},
 				"3": {
 					"name": "punctuation.definition.args.begin.vrl"
-				},
-				"4": {
-					"name": "keyword.operator.assignment.vrl"
-				},
-				"5": {
-					"name": "punctuation.definition.args.begin.vrl"
 				}
 			},
-			
-			"end": "((\\)(?!\\s*-\\>))|(\\|\\s*\\{))",
+			"end": "\\)",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.definition.args.end.vrl"
@@ -147,6 +139,10 @@
 				}
 			]
 		},
+    "control-block": {
+      "comment": "if/else block",
+      "name": ""
+    },
 		"null": {
 			"comment": "Null value",
 			"name": "constant.language.null.vrl",
@@ -162,7 +158,44 @@
 		"object": {
 			"comment": "Object value",
 			"name": "meta.structure.dictionary.vrl",
-			"begin": "[=|:](\\s?)+\\{",
+			"begin": "([=|:])([ \\t]*)(\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.operator.assignment.vrl"
+				},
+				"3": {
+					"name": "punctuation.definition.dictionary.begin.vrl"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.dictionary.end.vrl"
+				}
+			},
+			"patterns": [
+				{
+					"comment": "Object key",
+					"include": "#object-key"
+				},
+				{
+					"comment": "Object value",
+					"include": "#object-value"
+				},
+				{
+					"match": "[^\\s\\}]",
+					"name": "invalid.illegal.expected-dictionary-separator.vrl"
+				},
+				{
+					"comment": "Comment",
+					"include": "#comment"
+				}
+			]
+		},
+		"object-bare": {
+			"comment": "Nested object value (no leading operator)",
+			"name": "meta.structure.dictionary.vrl",
+			"begin": "\\{",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.definition.dictionary.begin.vrl"
@@ -228,6 +261,9 @@
 			},
 			"patterns": [
 				{
+					"include": "#object-bare"
+				},
+				{
 					"include": "#function"
 				},
 				{
@@ -248,25 +284,25 @@
 		"operator": {
 			"patterns": [
 				{
-					"comment": "Assignment",
-					"name": "keyword.operator.assignment.vrl",
-					"match": "=|\\|=|\\?\\?|-\\>\\s*\\|"
-				},
-				{
 					"comment": "Comparison",
 					"name": "keyword.operator.comparison.vrl",
 					"match": "(<|>)(=)?|==|!="
 				},
 				{
+					"comment": "Assignment",
+					"name": "keyword.operator.assignment.vrl",
+					"match": "=|\\|=|\\?\\?"
+				},
+				{
 					"comment": "Logical",
 					"name": "keyword.operator.logical.vrl",
-					"match": "&&|\\|\\||;"
+					"match": "&&|\\|\\|"
 				}
 			]
 		},
 		"path": {
 			"comment": "Event path",
-			"name": "variable.language.path.vrl",
+			"name": "variable.parameter.vrl",
 			"match": "\\.(\\w+)?"
 		},
 		"plain-integer-or-float": {
