@@ -3,3 +3,19 @@
 if true {
 # <-- keyword.control.vrl
 }
+
+if .status == 200 {
+# <-- keyword.control.vrl
+#  ^^^^^^^ variable.parameter.vrl
+#          ^^ keyword.operator.comparison.vrl
+#             ^^^ constant.numeric.vrl
+} else {
+# ^^^^ keyword.control.vrl
+}
+
+if .ok {
+# <-- keyword.control.vrl
+} else if .err {
+# ^^^^ keyword.control.vrl
+#      ^^ keyword.control.vrl
+}

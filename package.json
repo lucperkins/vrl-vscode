@@ -11,7 +11,6 @@
   "engines": {
     "vscode": "^1.60.0"
   },
-  "main": "./syntaxes/vrl.tmLanguage.json",
   "repository": "https://github.com/lucperkins/vrl-vscode",
   "homepage": "https://marketplace.visualstudio.com/items?itemName=lucperkins.vrl-vscode",
   "bugs": {
@@ -29,15 +28,12 @@
     "transforms",
     "observability"
   ],
-  "activationEvents": [
-    "workspaceContains::**/*.vrl"
-  ],
   "scripts": {
-    "generate": "yarn generate-snippets && yarn generate-tmLanguage",
+    "generate": "npm run generate-snippets && npm run generate-tmLanguage",
     "generate-snippets": "ejs --data-file ./data/functions.json --output-file ./snippets/vrl.json ./templates/snippets.ejs.json",
     "generate-tmLanguage": "ejs --data-file ./data/functions.json --output-file ./syntaxes/vrl.tmLanguage.json ./templates/vrl.tmLanguage.ejs.json",
     "package": "vsce package",
-    "publish": "vsce publish --yarn",
+    "publish": "vsce publish",
     "test": "vscode-tmgrammar-test --scope source.vrl --grammar ./syntaxes/vrl.tmLanguage.json --testcases \"test/**/*.vrl\""
   },
   "contributes": {
