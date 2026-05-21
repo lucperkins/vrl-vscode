@@ -1,5 +1,5 @@
 WATCH = watchexec --watch templates --watch test
-YARN = yarn --ignore-engines
+NPM = npm run
 VRL_INFO = https://vector.dev/index.json
 VRL_FUNC_JSON= ./data/functions.json
 
@@ -10,17 +10,17 @@ dev:
 	$(WATCH) "make generate && make test"
 
 generate:
-	$(YARN) generate-snippets && $(YARN) generate-tmLanguage
+	$(NPM) generate-snippets && $(NPM) generate-tmLanguage
 
 .PHONY: test
 test:
-	$(YARN) test
+	$(NPM) test
 
 package:
-	$(YARN) package
+	$(NPM) package
 
 publish: package
-	$(YARN) publish
+	$(NPM) publish
 
 fetch-vrl-data:
 	curl $(VRL_INFO) | jq '.vrl | {functions: .functions | keys}' > "$(VRL_FUNC_JSON)"
