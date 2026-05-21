@@ -17,6 +17,7 @@
           packages = with pkgs; [
             nodejs
             biome
+            vector
             watchexec
           ];
         };
