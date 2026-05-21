@@ -1,5 +1,9 @@
 name: Test and publish
-on: [push, pull_request]
+on:
+  push:
+    branches: ["*"]
+    tags: ["v*"]
+  pull_request:
 
 jobs:
   test-and-publish:
@@ -25,7 +29,7 @@ jobs:
         run: nix develop --command npm run test
 
       - name: Publish
-        if: success() && startsWith(github.ref, 'refs/tags/releases/')
+        if: success() && startsWith(github.ref, 'refs/tags/v')
         run: nix develop --command npm run publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
