@@ -1,5 +1,11 @@
 # Vector Remap Language for VS Code
 
+> [!WARNING]
+> This project is no longer maintained, and the repository is archived. The latest version on the
+> [VS Code Marketplace][marketplace] is 0.1.4. Later fixes and features, such as VRL highlighting in
+> YAML, are only available by [building from source](#building-from-source). For an actively
+> maintained alternative, search the Marketplace for [VRL extensions][marketplace-search].
+
 This extension adds language support for [Vector Remap Language][vrl] (VRL) to [Visual Studio
 Code][vscode]. VRL is a domain-specific language (DSL) for handling observability data (logs and
 metrics) that's used in conjunction with [Vector], most often in Vector's [`remap`][remap] transform
@@ -79,10 +85,12 @@ Development Host with the extension loaded.
 
 ## Status
 
-Language support for VRL on VS Code is currently in an early phase. Issues and pull requests are
-quite welcome!
+This project is archived and no longer maintained. The code remains available under the
+[MPL-2.0](./LICENSE) license, so feel free to fork it.
 
 [biome]: https://biomejs.dev
+[marketplace]: https://marketplace.visualstudio.com/items?itemName=lucperkins.vrl-vscode
+[marketplace-search]: https://marketplace.visualstudio.com/search?term=vrl&target=VSCode
 [cursor]: https://cursor.com
 [functions]: https://vrl.dev/functions
 [nix]: https://nixos.org
