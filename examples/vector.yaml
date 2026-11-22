@@ -1,0 +1,38 @@
+# VRL embedded in a Vector config. The same keys work in Helm values files
+# (for example under `customConfig`).
+sources:
+  logs:
+    type: demo_logs
+    format: json
+
+transforms:
+  parse:
+    type: remap
+    inputs: ["logs"]
+    source: |
+      . = parse_json!(.message)
+      .status = to_int!(.status)
+      if .status >= 500 {
+        .level = "error"
+      }
+
+  errors_only:
+    type: filter
+    inputs: ["parse"]
+    condition: '.level == "error"'
+
+  sample_ok:
+    type: sample
+    inputs: ["parse"]
+    rate: 10
+    exclude:
+      type: vrl
+      source: >-
+        .status == 200
+
+sinks:
+  console:
+    type: console
+    inputs: ["errors_only", "sample_ok"]
+    encoding:
+      codec: json

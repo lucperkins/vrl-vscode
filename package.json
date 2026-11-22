@@ -26,7 +26,8 @@
     "remap",
     "remapping",
     "transforms",
-    "observability"
+    "observability",
+    "yaml"
   ],
   "scripts": {
     "generate": "npm run generate-snippets && npm run generate-tmLanguage",
@@ -55,6 +56,17 @@
         "language": "vrl",
         "scopeName": "source.vrl",
         "path": "./syntaxes/vrl.tmLanguage.json"
+      },
+      {
+        "scopeName": "yaml.vrl.injection",
+        "path": "./syntaxes/vrl.yaml-injection.tmLanguage.json",
+        "injectTo": [
+          "source.yaml"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.vrl": "vrl",
+          "meta.embedded.line.vrl": "vrl"
+        }
       }
     ],
     "snippets": [

@@ -15,6 +15,30 @@ At the moment, language support mostly entails syntax highlighting for your `.vr
 included, however, [snippets] for VRL [functions]. If you begin typing the name of a built-in VRL
 function, VS Code's Intellisense suggests possible completions.
 
+### VRL in YAML
+
+VRL embedded in YAML files, such as Vector configs and Helm values files, is highlighted too. This
+applies to values of `source` and `condition` keys written as block scalars (`|`, `>`, `|-`, and so
+on) or as quoted strings:
+
+```yaml
+transforms:
+  parse:
+    type: remap
+    inputs: ["logs"]
+    source: |
+      . = parse_json!(.message)
+
+  errors_only:
+    type: filter
+    inputs: ["parse"]
+    condition: '.level == "error"'
+```
+
+Unquoted single-line values (`condition: .status == 500`) aren't highlighted, as they're
+indistinguishable from ordinary YAML strings. See [`examples/vector.yaml`](./examples/vector.yaml)
+for more.
+
 I do hope to expand the feature set over time, but for now I hope that syntax highlighting and
 function name Intellisense will make it easier and more fun and to write VRL!
 

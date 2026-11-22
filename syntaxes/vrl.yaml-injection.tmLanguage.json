@@ -1,0 +1,94 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"comment": "Highlights VRL embedded in YAML (Vector configs, Helm values files) under `source` and `condition` keys",
+	"scopeName": "yaml.vrl.injection",
+	"injectionSelector": "L:source.yaml -comment -string",
+	"patterns": [
+		{
+			"include": "#block-scalar"
+		},
+		{
+			"include": "#single-quoted"
+		},
+		{
+			"include": "#double-quoted"
+		}
+	],
+	"repository": {
+		"block-scalar": {
+			"comment": "source: | or condition: >- followed by an indented block of VRL",
+			"begin": "(?:(?<=\\bsource:)|(?<=\\bcondition:)|(?<=\\bsource: )|(?<=\\bcondition: ))[ \\t]*(?:(\\|)|(>))([1-9])?([-+])?[ \\t]*(#.*)?\\s*$",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.flow.block-scalar.literal.yaml"
+				},
+				"2": {
+					"name": "keyword.control.flow.block-scalar.folded.yaml"
+				},
+				"3": {
+					"name": "constant.numeric.indentation-indicator.yaml"
+				},
+				"4": {
+					"name": "storage.modifier.chomping-indicator.yaml"
+				},
+				"5": {
+					"name": "comment.line.number-sign.yaml"
+				}
+			},
+			"end": "^(?=\\S)|(?!\\G)",
+			"patterns": [
+				{
+					"comment": "The block's indentation is set by its first content line",
+					"begin": "(?>^|\\G)(?=([ ]+)(?! ))",
+					"end": "(?>^|\\G)(?!\\1|\\s*$)",
+					"contentName": "meta.embedded.block.vrl",
+					"patterns": [
+						{
+							"include": "source.vrl"
+						}
+					]
+				}
+			]
+		},
+		"single-quoted": {
+			"comment": "condition: '.status == 500'",
+			"match": "(?:(?<=\\bsource:)|(?<=\\bcondition:)|(?<=\\bsource: )|(?<=\\bcondition: ))[ \\t]*(')((?:[^']|'')*)(')(?=[ \\t]*(?:#.*)?$)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.string.begin.yaml"
+				},
+				"2": {
+					"name": "meta.embedded.line.vrl",
+					"patterns": [
+						{
+							"include": "source.vrl"
+						}
+					]
+				},
+				"3": {
+					"name": "punctuation.definition.string.end.yaml"
+				}
+			}
+		},
+		"double-quoted": {
+			"comment": "condition: \".status == 500\"",
+			"match": "(?:(?<=\\bsource:)|(?<=\\bcondition:)|(?<=\\bsource: )|(?<=\\bcondition: ))[ \\t]*(\")((?:[^\"\\\\]|\\\\.)*)(\")(?=[ \\t]*(?:#.*)?$)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.string.begin.yaml"
+				},
+				"2": {
+					"name": "meta.embedded.line.vrl",
+					"patterns": [
+						{
+							"include": "source.vrl"
+						}
+					]
+				},
+				"3": {
+					"name": "punctuation.definition.string.end.yaml"
+				}
+			}
+		}
+	}
+}
