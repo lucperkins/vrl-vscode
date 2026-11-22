@@ -1,0 +1,32 @@
+# SYNTAX TEST "source.vrl" "closure"
+
+. = map_keys(.) -> |key| {
+#               ^^ keyword.operator.closure.vrl
+#                  ^ punctuation.definition.parameters.begin.vrl
+#                   ^^^ variable.parameter.closure.vrl
+#                      ^ punctuation.definition.parameters.end.vrl
+#                        ^ - meta.structure.dictionary.vrl
+  replace(key, r'NSN-SNMP-NBI-FAULTMANAGEMENT-MIB::', "")
+# ^^^^^^^ entity.name.function.vrl
+#                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.regexp.vrl
+#                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ - meta.structure.dictionary.vrl
+#                                                     ^^ string.quoted.double.vrl
+}
+
+for_each(.) -> |key, value| {
+#           ^^ keyword.operator.closure.vrl
+#               ^^^ variable.parameter.closure.vrl
+#                  ^ punctuation.definition.separator.vrl
+#                    ^^^^^ variable.parameter.closure.vrl
+  .count = 1
+# ^^^^^^ variable.parameter.vrl
+}
+
+.after = { "a": 1 }
+# <-------- - string
+#      ^ keyword.operator.assignment.vrl
+#        ^ punctuation.definition.dictionary.begin.vrl
+
+.merged |= { "b": 2 }
+#        ^ keyword.operator.assignment.vrl
+#          ^ punctuation.definition.dictionary.begin.vrl
