@@ -42,12 +42,51 @@ for more.
 I do hope to expand the feature set over time, but for now I hope that syntax highlighting and
 function name Intellisense will make it easier and more fun and to write VRL!
 
+## Building from source
+
+To build and install the extension from the latest `main`, you need [Node.js] 22 or later:
+
+```shell
+git clone https://github.com/lucperkins/vrl-vscode
+cd vrl-vscode
+npm ci
+npm run package
+code --install-extension vrl-vscode-*.vsix
+```
+
+For [Cursor] or another VS Code fork, use its CLI in place of `code`, for example `cursor
+--install-extension`. Reload the editor window afterwards. If you use [Nix], `nix develop` provides
+Node.js and the other development tools.
+
+## Development
+
+| Command                   | What it does                                                        |
+| :------------------------ | :------------------------------------------------------------------ |
+| `npm test`                | Run the grammar tests in [`test`](./test), including the YAML cases |
+| `npm run check`           | Lint and check formatting with [Biome]                              |
+| `npm run format`          | Apply Biome's formatting and safe fixes                             |
+| `npm run generate`        | Regenerate the grammar and snippets from [`templates`](./templates) |
+| `npm run check:generated` | Fail if the generated files are out of date                         |
+| `npm run package`         | Build a `.vsix` package                                             |
+
+The grammar ([`syntaxes/vrl.tmLanguage.json`](./syntaxes/vrl.tmLanguage.json)) and the snippets are
+generated from the templates and the list of VRL functions in
+[`data/functions.json`](./data/functions.json), so edit the templates rather than the generated
+files. `make fetch-vrl-data` refreshes the function list from vector.dev.
+
+To try your changes, open this repo in VS Code and press <kbd>F5</kbd> to launch an Extension
+Development Host with the extension loaded.
+
 ## Status
 
 Language support for VRL on VS Code is currently in an early phase. Issues and pull requests are
 quite welcome!
 
+[biome]: https://biomejs.dev
+[cursor]: https://cursor.com
 [functions]: https://vrl.dev/functions
+[nix]: https://nixos.org
+[node.js]: https://nodejs.org
 [remap]: https://vector.dev/docs/reference/configuration/transforms/remap
 [route]: https://vector.dev/docs/reference/configuration/transforms/route
 [sample]: https://vector.dev/docs/reference/configuration/transforms/sample

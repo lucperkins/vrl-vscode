@@ -1,0 +1,46 @@
+# SYNTAX TEST "source.yaml" "VRL embedded in YAML"
+transforms:
+  parse:
+    type: remap
+    source: |
+#           ^ keyword.control.flow.block-scalar.literal.yaml
+      .x = parse_json!(.message)
+#     ^^ meta.embedded.block.vrl variable.parameter.vrl
+#          ^^^^^^^^^^ meta.embedded.block.vrl entity.name.function.vrl
+
+      if .y { .z = 2 }
+#     ^^ meta.embedded.block.vrl keyword.control.vrl
+    inputs: ["logs"]
+#   ^^^^^^ entity.name.tag.yaml
+#   ^^^^^^ - meta.embedded.block.vrl
+#   ^^^^^^ - invalid.illegal
+
+  filter:
+    type: filter
+    condition: '.level == "error"'
+#              ^ punctuation.definition.string.begin.yaml
+#               ^^^^^^ meta.embedded.line.vrl variable.parameter.vrl
+#                      ^^ meta.embedded.line.vrl keyword.operator.comparison.vrl
+#                                ^ punctuation.definition.string.end.yaml
+    inputs: ["parse"]
+#   ^^^^^^ entity.name.tag.yaml
+
+  sample:
+    - condition: ".status == 200"
+#                 ^^^^^^^ meta.embedded.line.vrl variable.parameter.vrl
+    - type: vrl
+      source: >-
+#             ^ keyword.control.flow.block-scalar.folded.yaml
+#              ^ storage.modifier.chomping-indicator.yaml
+        .status == 500
+#       ^^^^^^^ meta.embedded.block.vrl variable.parameter.vrl
+      after: 1
+#     ^^^^^ entity.name.tag.yaml
+#     ^^^^^ - meta.embedded.block.vrl
+
+other:
+  source: plain_value
+#         ^^^^^^^^^^^ - meta.embedded
+  script: |
+    .not_vrl = 1
+#   ^^^^^^^^ - meta.embedded
